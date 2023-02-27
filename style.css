@@ -67,16 +67,20 @@ body {
 .unit-select {
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 0.2em 0;
     font-size: 5em;
 }
 
-.label-grid {
-    size: 1.5em;
-    display: grid;
-    padding: 40px 40px;
-    margin: 10px 10px;
-    height: 100vh;
-    width: 100%;
+.label-grid-row {
+    display: flexbox;
+    flex-wrap: wrap;
+}
+
+.label-grid-column {
+    flex: 50%;
+}
+
+.label-grid-column img {
+    margin-top: 1em;
+    vertical-align: middle;
+    width: 4.2em;
 }
