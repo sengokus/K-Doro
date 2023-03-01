@@ -23,6 +23,7 @@
         background-position: right;
     }
 }
+
 body {
     background-image: var(--gradient);
     background-size: 300%;
