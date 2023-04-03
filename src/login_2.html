@@ -36,13 +36,15 @@
 
                 <div class="right-pane">
                     <div class="login">
-                        <h1>Log In</h1>
+                        <h1 id="login-label">Login</h1>
                         <form class="form active" id="login">
                             <div class="input">
-                                <input type="text" name="email" id="inputUsername" placeholder="Username" required>
+                                <label for="login" class="usernameLabel">Username</label>
+                                <input type="text" name="email" id="inputUsername" required>
                             </div>
                             <div class="input">
-                                <input type="password" name="password" id="inputPassword" placeholder="Password" required>
+                                <label for="login" class="passwordLabel">Password</label>
+                                <input type="password" name="password" id="inputPassword" required>
                             </div>
                             <div class="remember-box">
                                 <input type="checkbox" name="remember" id="rememberCheckbox"><span class="remember-text">Remember Password</span>

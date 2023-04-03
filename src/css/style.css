@@ -173,9 +173,27 @@ body {
 
 .right-pane {
     font-family: 'Sen', sans-serif;
+    color: rgb(29, 40, 58);
     padding-top: 4em;
     /* background-color: #E8F4F3; */
     /* border-radius: 3em; */
+}
+
+#login-label {
+    padding-bottom: 1em;
+}
+
+.input {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.input label {
+    position: absolute;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    padding-top: 0.2em;
+    padding-left: 2em;
 }
 
 .input input {
@@ -183,7 +201,6 @@ body {
     height: 2.5em;
     border: none;
     font-size: 1em;
-    font-family: 'Public Sans', sans-serif;
     /* border-radius: 0.5em; */
     padding-left: 0.9em;
     margin: 1em 2em;
