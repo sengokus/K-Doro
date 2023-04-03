@@ -2,35 +2,80 @@
 <html>
     <head>
         <title>K-Doro</title>
-        <link rel="stylesheet" href="./css/homepage_style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <nav class="login">
+        <!-- banner, might be changed or deleted -->
+        <img src="../resources/img/red-velvet-bg.jpg" id="banner">
+        
+        <!-- logo, not final -->
+        <span class="logo" id="logo">K-Doro</span>
+
+        <!-- navbar -->
+        <nav class="nav">
             <ul>
                 <li>
-                    <a href="#">
-                        <span class="login-icon">
-                            <ion-icon name="person-circle-outline"></ion-icon>
-                        </span>
-                        <a href="./login.html">Login</a>
-                    </a>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="./login_2.html" id="login-label">Log In</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="about-icon">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <a href="#" id="about-label">About</a>
+                    </span>
                 </li>
             </ul>
         </nav>
 
-        <div class="unit-select">
-            <label>Select a label</label>
-            
+        <!-- unit select grid -->
+        <div class="unit-select">            
             <div class="label-grid-row">
+                <label id="select-label">Select a label</label>
                 <div class="label-grid-column">
-                    <img src="../resources/img/sm.jpg"></img>
-                    <img src="../resources/img/yg.jpg"></img>
-                    <img src="../resources/img/jyp.jpg"></img>
-                    <img src="../resources/img/hybe.jpg"></img>
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr class="ent-img">
+                            <th>
+                                <a href="#"><img src="../resources/img/hybe.jpg", alt="HYBE Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="#"><img src="../resources/img/jyp.jpg", alt="JYP Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="#"><img src="../resources/img/sm.jpg", alt="SM Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="#"><img src="../resources/img/yg.jpg", alt="YG Entertainment"></a>
+                            </th>
+                        </tr>
+                        <tr class="ent-label">
+                            <td>
+                                <label>HYBE</label>
+                            </td>
+                            <td>
+                                <label>JYP</label>
+                            </td>
+                            <td>
+                                <label>SM</label>
+                            </td>
+                            <td>
+                                <label>YG</label>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>K-Doro</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+    <div id="#page-container">
+        <!-- banner, might be changed or deleted -->
+        <img src="../resources/img/red-velvet-bg.jpg" id="banner">
+
+        <nav class="nav">
+            <ul>
+                <li>
+                    <span class="back-icon">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                        <a href="./homepage.html" id="home-label">Back to Home</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="login">
+            <div class="container">
+                <div class="left-pane">
+                    <img src="../resources/img/winter-1.jpg" alt="Winter">
+                </div>
+
+                <div class="right-pane">
+                    <div class="login">
+                        <h1>Log In</h1>
+                        <form class="form active" id="login">
+                            <div class="input">
+                                <input type="text" name="email" id="inputUsername" placeholder="Username" required>
+                            </div>
+                            <div class="input">
+                                <input type="password" name="password" id="inputPassword" placeholder="Password" required>
+                            </div>
+                            <div class="remember-box">
+                                <input type="checkbox" name="remember" id="rememberCheckbox"><span class="remember-text">Remember Password</span>
+                            </div>
+                            <div class="input">
+                                <button type="submit" name="submit">Log In</button>
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="registration">
+
+        </div>
+    </div>
+</body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>
