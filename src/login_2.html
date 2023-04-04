@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>K-Doro</title>
+        <title>Login</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
 <body>
     <div id="#page-container">
-        <!-- banner, might be changed or deleted -->
+        <!-- Temp banner, might be changed or deleted -->
         <img src="../resources/img/red-velvet-bg.jpg" id="banner">
 
         <nav class="nav">
@@ -29,18 +29,19 @@
         </nav>
 
         <div id="login">
-            <div class="container">
+            <div class="login-container">
                 <div class="left-pane">
                     <img src="../resources/img/winter-1.jpg" alt="Winter">
                 </div>
 
+                <!-- TODO: Add icons for username and password -->
                 <div class="right-pane">
                     <div class="login">
                         <h1 id="login-label">Login</h1>
                         <form class="form active" id="login">
                             <div class="input">
                                 <label for="login" class="usernameLabel">Username</label>
-                                <input type="text" name="email" id="inputUsername" required>
+                                <input type="username" name="username" id="inputUsername" required>
                             </div>
                             <div class="input">
                                 <label for="login" class="passwordLabel">Password</label>
@@ -49,7 +50,7 @@
                             <div class="remember-box">
                                 <input type="checkbox" name="remember" id="rememberCheckbox"><span class="remember-text">Remember Password</span>
                             </div>
-                            <div class="input">
+                            <div class="submit-button">
                                 <button type="submit" name="submit">Log In</button>
                             </div>
                         </form>
