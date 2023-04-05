@@ -50,7 +50,7 @@ body {
 
 #logo {
     font-family: "Sen", sans-serif;
-    font-size: 5em;
+    /* font-size: 5em; */
     letter-spacing: -0.08em;
     color: rgb(236, 239, 244);
     position: absolute;
@@ -68,7 +68,6 @@ body {
     justify-content: right;
     right: 1em;
     top: 2.1em;
-    width: 100%;
     color: rgb(236, 239, 244);
 }
 
@@ -180,7 +179,7 @@ body {
     /* border-radius: 3em; */
 }
 
-#login-label {
+#login-button-label {
     padding-bottom: 0.7em;
     font-size: 3.2em;
     font-weight: bold;
