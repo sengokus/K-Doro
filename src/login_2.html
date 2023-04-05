@@ -22,7 +22,7 @@
                 <li>
                     <span class="back-icon">
                         <ion-icon name="arrow-back-outline"></ion-icon>
-                        <a href="./homepage.html" id="home-label">Back to Home</a>
+                        <a href="./homepage.html">Back to Home</a>
                     </span>
                 </li>
             </ul>
@@ -41,14 +41,15 @@
                         <form class="form active" id="login">
                             <div class="input">
                                 <label for="login" class="usernameLabel">Username</label>
-                                <input type="username" name="username" id="inputUsername" required>
+                                <input type="username" name="username" required>
                             </div>
                             <div class="input">
                                 <label for="login" class="passwordLabel">Password</label>
-                                <input type="password" name="password" id="inputPassword" required>
+                                <input type="password" name="password" required>
                             </div>
                             <div class="remember-box">
-                                <input type="checkbox" name="remember" id="rememberCheckbox"><span class="remember-text">Remember Password</span>
+                                <input type="checkbox" name="remember">
+                                <label for="remember-text" class="rememberLabel">Remember Password</span>
                             </div>
                             <div class="submit-button">
                                 <button type="submit" name="submit">Log In</button>
@@ -68,6 +69,10 @@
     </div>
 </body>
 
+<!-- Script -->
+<script src="/script.js"></script>
+
+<!-- Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

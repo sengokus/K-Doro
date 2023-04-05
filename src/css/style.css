@@ -153,7 +153,7 @@ body {
     position: absolute;
     text-align: center;
     top: 30%;
-    left: 30%;
+    left: 28%;
 }
 
 .left-pane img {
@@ -239,9 +239,24 @@ body {
     font-family: 'Public Sans', sans-serif;
 }
 
-.remember-box input {
-    margin: 0.5em 0.5em;
+.remember-box {
+    font-family: 'Public Sans', sans-serif;
+    letter-spacing: -0.03em;
+    position: absolute;
+    /* display: inline-block; */
+    margin: 0.5em 0.2em;
     border-radius: 0.5em;
+    left: 27em;
+}
+
+.remember-box input {
+    cursor: pointer;
+    /* opacity: 0; */
+    margin: auto 0.5em;
+}
+
+.submit-button {
+    padding-top: 1.2em;
 }
 
 .submit-button button {
@@ -267,4 +282,21 @@ body {
     background-color: rgb(87, 113, 160);
     box-shadow: 0 0.05em rgb(26, 29, 32);
     transform: translateY(0.2em);
+}
+
+.signup {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.8em;
+    color: rgb(29, 40, 58);
+}
+
+.signup a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    transition: 0.3s all ease;
+}
+
+.signup a:hover {
+    color: rgb(83, 114, 170);
 }
