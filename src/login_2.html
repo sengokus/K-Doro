@@ -37,14 +37,20 @@
                 <!-- TODO: Add icons for username and password -->
                 <div class="right-pane">
                     <div class="login">
-                        <h1 id="login-label">Login</h1>
+                        <h1 id="login-button-label">Login</h1>
                         <form class="form active" id="login">
                             <div class="input">
-                                <label for="login" class="usernameLabel">Username</label>
+                                <span class="login-icon" id="loginUser">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                    <label for="login" class="usernameLabel">Username</label>
+                                </span>
                                 <input type="username" name="username" required>
                             </div>
                             <div class="input">
-                                <label for="login" class="passwordLabel">Password</label>
+                                <span class="password-icon">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <label for="login" class="passwordLabel">Password</label>
+                                </span>
                                 <input type="password" name="password" required>
                             </div>
                             <div class="remember-box">
