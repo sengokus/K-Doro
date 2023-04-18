@@ -187,7 +187,7 @@ ion-icon {
     /* border-radius: 3em; */
 }
 
-#login-page-label {
+#login-reg-page-label {
     position: relative;
     display: flex;
     justify-content: center;
@@ -204,6 +204,11 @@ ion-icon {
     transition: 0.3s all ease;
 }
 
+#emailUser {
+    position: absolute;
+    padding-left: 2em;
+}
+
 #loginUser {
     position: absolute;
     padding-left: 2em;
@@ -214,7 +219,7 @@ ion-icon {
     padding-left: 2em;   
 }
 
-.login-icon ion-icon[name="people-outline"], .password-icon ion-icon[name="lock-closed-outline"] {
+.email-icon ion-icon[name="at-outline"], .login-icon ion-icon[name="people-outline"], .password-icon ion-icon[name="lock-closed-outline"] {
     position: absolute;
 }
 
@@ -223,7 +228,7 @@ ion-icon {
     font-size: 1em;
     font-weight: bold;
     color: rgb(29, 40, 58);
-    padding-top: 0.2em;
+    /* padding-top: 0.2em; */
     padding-left: 2em;
 }
 
@@ -254,7 +259,7 @@ ion-icon {
     margin: 0.7em;
 }
 
-.input .usernameLabel, .input .passwordLabel {
+.input .usernameLabel, .input .passwordLabel, .input .emailLabel {
     margin: -0.1em -0.4em;
 }
 
@@ -262,7 +267,7 @@ ion-icon {
     letter-spacing: 0.175em;
 }
 
-.input input[type="username"], .input input[type="password"] {
+.input input[type="username"], .input input[type="password"], .input input[type="email"] {
     font-family: 'Public Sans', sans-serif;
 }
 

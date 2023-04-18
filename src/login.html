@@ -1,64 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login and Register</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/login_style.css">
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-</head>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <img src="../resources/img/sm.jpg" alt="img" class="img" >
-            <!-- TO DO: ADJUST IMAGE SIZE? -->
+    <body>
+        <!-- Temp banner, might be changed or deleted -->
+        <img src="../resources/img/red-velvet-bg.jpg" id="banner">
+
+        <!-- Logo, not final -->
+        <span class="logo" id="logo">K-Doro</span>
+
+        <nav class="nav">
+            <ul>
+                <li>
+                    <span class="back-icon">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                        <a href="./index.html" id="home-label">Back to Home</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="login">
+            <div class="login-container">
+                <div class="left-pane">
+                    <img src="../resources/img/winter-1.jpg" alt="Winter">
+                </div>
+
+                <!-- TODO: Add icons for username and password -->
+                <div class="right-pane">
+                    <div class="login">
+                        <label id="login-reg-page-label">Login</label>
+                        <form class="form active" id="login">
+                            <div class="input">
+                                <span class="login-icon" id="loginUser">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                    <label for="login" class="usernameLabel">Username</label>
+                                </span>
+                                <input type="username" name="username" required>
+                            </div>
+                            <div class="input">
+                                <span class="password-icon" id="loginPassword">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <label for="login" class="passwordLabel">Password</label>
+                                </span>
+                                <input type="password" name="password" required>
+                            </div>
+                            <div class="remember-box">
+                                <input type="checkbox" name="remember">
+                                <label for="remember-text" class="rememberLabel">Remember Password</span>
+                            </div>
+                            <div class="submit-button">
+                                <button type="submit" name="submit">Log In</button>
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <form action="#" class="form active" id="login">
-                <h2>Login</h2>
-                <label for="email">Email</label>
-                <div class="pass-reset" onclick="activeInput(this)">
-                    <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
-                </div>
-                <label for="password">Password</label>
-                <div class="pass-reset" onclick="activeInput(this)">
-                    <input type="password" class="password" name="password" id="password" placeholder="**********">
-                    <a href="#" class="reset-password">Reset Password</a>
-                </div>
-                <div class="pass-reset remember-box">
-                    <input type="checkbox" name="remember" class="remember" id="remember"><span class="remember-text">Remember Password</span>
-                </div>
-                <button class="btn btn-login">Login</button>
-                <p>Don't have an account? <a onclick="changeToRegister()" id="changeToRegister">Sign up</a></p>
+    </body>
 
-                
-            </form>
-            <form action="#" class="form" id="register">
-                <h2>Register</h2>
-                <label for="email">Email Address</label>
-                <div class="pass-reset" onclick="activeInput(this)">
-                    <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
-                </div>
-                <label for="password">Password</label>
-                <div class="pass-reset" onclick="activeInput(this)">
-                    <input type="password" class="password" name="password" id="password" placeholder="**********">
-                </div>
-                <label for="re-password">Re-Password</label>
-                <div class="pass-reset" onclick="activeInput(this)">
-                    <input type="password" class="password" name="re-password" id="re-password" placeholder="**********">
-                </div>
-                <button class="btn btn-login">Register</button>
-                <p>Do you have an account? <a onclick="changeToLogin()" id="changeToLogin">Sign in</a></p>
-                
-            </form>
-        </div>
-    </div>
-    <!-- JS -->
-    <script src="../script.js"></script>
-</body>
+<!-- Script -->
+<script src="/index.js"></script>
+
+<!-- Icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

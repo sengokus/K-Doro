@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Register</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
@@ -42,9 +42,16 @@
 
                 <!-- TODO: Add icons for username and password -->
                 <div class="right-pane">
-                    <div class="login">
-                        <label id="login-page-label">Login</label>
-                        <form class="form active" id="login">
+                    <div class="register">
+                        <label id="login-reg-page-label">Register</label>
+                        <form class="form active" id="register">
+                            <div class="input">
+                                <span class="email-icon" id="emailUser">
+                                    <ion-icon name="at-outline"></ion-icon>
+                                    <label for="email" class="emailLabel">Email</label>
+                                </span>
+                                <input type="username" name="username" required>
+                            </div>
                             <div class="input">
                                 <span class="login-icon" id="loginUser">
                                     <ion-icon name="people-outline"></ion-icon>
@@ -59,16 +66,19 @@
                                 </span>
                                 <input type="password" name="password" required>
                             </div>
-                            <div class="remember-box">
-                                <input type="checkbox" name="remember">
-                                <label for="remember-text" class="rememberLabel">Remember Password</span>
+                            <div class="input">
+                                <span class="password-icon" id="loginPassword">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <label for="login" class="passwordLabel">Re-enter Password</label>
+                                </span>
+                                <input type="password" name="password" required>
                             </div>
                             <div class="submit-button">
                                 <button type="submit" name="submit">Log In</button>
                             </div>
                         </form>
                         <div class="signup">
-                            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                            <a href="signup.html">Sign in</a></p>
                         </div>
                     </div>
                 </div>
