@@ -174,15 +174,15 @@
         // get the group parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const group = urlParams.get('group');
-      
+    
         // show the corresponding group container
         if (group) {
-          const selectedGroup = document.getElementById(`group-${group}`);
-          if (selectedGroup) {
-            selectedGroup.style.display = "flex";
-          }
+            const selectedGroup = document.getElementById(`group-${group}`);
+            if (selectedGroup) {
+                selectedGroup.style.display = "flex";
+            }
         }
-      </script>
+    </script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
