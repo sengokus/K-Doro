@@ -127,6 +127,37 @@ ion-icon {
     padding-top: 1.5em;
 }
 
+.group-select {
+    display: none;
+    justify-content: center;
+    font-size: 5em;
+    text-align: center;
+    padding-top: 1.5em;
+}
+
+#group-hybe {
+    display: none;
+}
+
+#group-jyp {
+    display: none;
+}
+
+#group-sm {
+    display: none;
+}
+
+#group-yg {
+    display: none;
+}
+
+.label-logo {
+    position: block;
+    height: 1em;
+    max-width: 50%;
+    padding-top: 1.2em;
+}
+
 .label-grid-row {
     flex-wrap: wrap;
 }
