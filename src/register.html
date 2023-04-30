@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/login-register.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
@@ -31,6 +31,13 @@
                         <a href="../index.html" id="home-label">Back to Home</a>
                     </span>
                 </li>
+
+                <li>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="./login.html" id="login-label">Log In</a>
+                    </span>
+                </li>
             </ul>
         </nav>
 
@@ -41,45 +48,49 @@
                 </div>
 
                 <!-- TODO: Add icons for username and password -->
-                <div class="right-pane">
+                <div class="right-pane" id="reg-pane">
                     <div class="register">
-                        <label id="login-reg-page-label">Register</label>
+                        <label id="reg-page-label">Register</label>
                         <form class="form active" id="register">
                             <div class="input">
-                                <span class="email-icon" id="emailUser">
+                                <label for="email" id="email-label">Email</label>
+                                <span class="email-icon" id="email-icon">
                                     <ion-icon name="at-outline"></ion-icon>
-                                    <label for="email" class="emailLabel">Email</label>
+                                </span>
+
+                                <input type="username" name="username" required>
+                            </div>
+
+                            <div class="input">
+                                <label for="login" id="username-label">Username</label>
+                                <span class="login-icon" id="user-icon">
+                                    <ion-icon name="people-outline"></ion-icon>                                    
                                 </span>
                                 <input type="username" name="username" required>
                             </div>
+
                             <div class="input">
-                                <span class="login-icon" id="loginUser">
-                                    <ion-icon name="people-outline"></ion-icon>
-                                    <label for="login" class="usernameLabel">Username</label>
-                                </span>
-                                <input type="username" name="username" required>
-                            </div>
-                            <div class="input">
-                                <span class="password-icon" id="loginPassword">
+                                <label for="login" id="password-label">Password</label>
+                                <span class="password-icon" id="password-icon">
                                     <ion-icon name="lock-closed-outline"></ion-icon>
-                                    <label for="login" class="passwordLabel">Password</label>
                                 </span>
+
                                 <input type="password" name="password" required>
                             </div>
+
                             <div class="input">
-                                <span class="password-icon" id="loginPassword">
+                                <label for="login" id="password-again-label">Re-enter Password</label>
+                                <span class="password-icon" id="password-icon">
                                     <ion-icon name="lock-closed-outline"></ion-icon>
-                                    <label for="login" class="passwordLabel">Re-enter Password</label>
                                 </span>
+
                                 <input type="password" name="password" required>
                             </div>
-                            <div class="submit-button">
+
+                            <div class="submit-button" id="reg-submit">
                                 <button type="submit" name="submit">Log In</button>
                             </div>
                         </form>
-                        <div class="signup">
-                            <a href="signup.html">Sign in</a></p>
-                        </div>
                     </div>
                 </div>
             </div>

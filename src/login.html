@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/login-register.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
@@ -41,32 +41,38 @@
                 </div>
 
                 <!-- TODO: Add icons for username and password -->
-                <div class="right-pane">
+                <div class="right-pane" id="login-pane">
                     <div class="login">
-                        <label id="login-reg-page-label">Login</label>
+                        <label id="login-page-label">Login</label>
                         <form class="form active" id="login">
                             <div class="input">
-                                <span class="login-icon" id="loginUser">
+                                <label for="login" id="username-label">Username</label>
+                                <span class="login-icon" id="user-icon">
                                     <ion-icon name="people-outline"></ion-icon>
-                                    <label for="login" class="usernameLabel">Username</label>
                                 </span>
+
                                 <input type="username" name="username" required>
                             </div>
+
                             <div class="input">
-                                <span class="password-icon" id="loginPassword">
+                                <label for="login" id="password-label">Password</label>
+                                <span class="password-icon" id="password-icon">
                                     <ion-icon name="lock-closed-outline"></ion-icon>
-                                    <label for="login" class="passwordLabel">Password</label>
                                 </span>
+
                                 <input type="password" name="password" required>
                             </div>
+
                             <div class="remember-box">
                                 <input type="checkbox" name="remember">
-                                <label for="remember-text" class="rememberLabel">Remember Password</span>
+                                <label for="remember-text" id="remember-label">Remember Password</span>
                             </div>
-                            <div class="submit-button">
+
+                            <div class="submit-button" id="login-submit">
                                 <button type="submit" name="submit">Log In</button>
-                            </div>
+                            </div>                        
                         </form>
+
                         <div class="signup">
                             <p>Don't have an account? <a href="./register.html">Sign up</a></p>
                         </div>
