@@ -102,8 +102,7 @@ ion-icon {
     font-size: 1.35em;
 }
 
-/* Selecting a unit */
-#select-label {
+#team-label {
     position: relative;
     display: flex;
     justify-content: center;
@@ -114,12 +113,12 @@ ion-icon {
     color: rgb(29, 40, 58);
 }
 
-#select-label:hover {
+#team-label:hover {
     font-size: larger;
     color: rgb(83, 114, 170);
 }
 
-.unit-select {
+.team {
     display: flex;
     justify-content: center;
     font-size: 5em;
@@ -127,59 +126,55 @@ ion-icon {
     padding-top: 1.5em;
 }
 
-.group-select {
-    display: none;
-    justify-content: center;
-    font-size: 5em;
-    text-align: center;
-    padding-top: 1.5em;
-}
-
-#group-hybe {
-    display: none;
-}
-
-#group-jyp {
-    display: none;
-}
-
-#group-sm {
-    display: none;
-}
-
-#group-yg {
-    display: none;
-}
-
-.label-logo {
-    height: 1em;
-    max-width: 50%;
-    padding-top: 1.2em;
-}
-
-.label-grid-row {
+.team-grid-row {
     flex-wrap: wrap;
 }
 
-.label-grid-column img {
-    margin-top: 0.5em;
-    vertical-align: middle;
+.team-grid-column img {
+    display: block;
+    margin: 0.2em 0.2em;
+    /* vertical-align: middle; */
     width: 4.6em;
-    border-radius: 0.9em;
+    max-width: 5em;
+    border-radius: 50%;
     transition: 0.3s all ease;
 }
 
-.label-grid-column img:hover {
+.team-grid-column img:hover {
     width: 5em;
     border-radius: 0.3em;
     box-shadow: 0.08em 0.08em 0.02em rgba(63, 67, 72, 0.2);
 }
 
-.label-grid-column tr label {
+.team-grid-column tr label {
     font-family: 'Sen', sans-serif;
     letter-spacing: -0.08em;
     font-size: 0.6em;
     font-weight: bold;
     color: rgb(29, 40, 58);
     text-align: center;
+}
+
+#back-to-about {
+    position: relative;
+    text-decoration: none;
+    letter-spacing: -0.08em;
+    font-family: 'Sen', sans-serif;
+    color:rgb(236, 239, 244);
+    font-size: 0.26em;
+    padding: 0.3em 0.8em;
+    margin: 0.5em auto;
+    border-radius: 0.5em;
+    background-color: rgb(101, 142, 218);
+    transition: 0.3s all ease;
+}
+
+#back-to-about:hover, #back-to-about:active {
+    background-color: rgb(142, 166, 212);
+}
+
+#team-label-name {
+    display: block;
+    font-size: 0.4em;
+    line-height: 1em;
 }

@@ -16,4 +16,5 @@ function randomizeImage() {
     console.log(randImg);
 }
 
+// waits for the page to load before randomizing the image
 window.addEventListener("load", randomizeImage());
