@@ -9,7 +9,9 @@ function randomizeImage() {
       "ning-1.jpg",
       "seulgi-1.png",
       "tsuki-1.jpg",
-      "winter-1.jpg"];
+      "winter-1.jpg",
+      "wendy-1.jpg",
+      "yeri-1.png"];
     var randImg = images[Math.floor(Math.random() * images.length)];
   
     imgCard.src = "../resources/img/" + randImg;
