@@ -1,7 +1,4 @@
-// functions for app
+import { initDb, initFirebase } from "./firebaseConfig.js";
 
-import { addUser } from "./db/addUser.js";
-import { firebaseConfig } from "./firebaseConfig.js"
-
-firebaseConfig();
-addUser();
+const app = initFirebase();
+export const db = initDb(app);

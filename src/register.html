@@ -58,7 +58,7 @@
                                     <ion-icon name="at-outline"></ion-icon>
                                 </span>
 
-                                <input type="email" name="email" required>
+                                <input type="email" id="user_email" name="email" required>
                             </div>
 
                             <div class="input">
@@ -66,7 +66,7 @@
                                 <span class="login-icon" id="user-icon">
                                     <ion-icon name="people-outline"></ion-icon>                                    
                                 </span>
-                                <input type="username" name="username" required>
+                                <input type="username" id="user_name" name="username" required>
                             </div>
 
                             <div class="input">
@@ -75,7 +75,7 @@
                                     <ion-icon name="lock-closed-outline"></ion-icon>
                                 </span>
 
-                                <input type="password" name="password" required>
+                                <input type="password"  id = "user_password1" name="password" required>
                             </div>
 
                             <div class="input">
@@ -84,11 +84,11 @@
                                     <ion-icon name="lock-closed-outline"></ion-icon>
                                 </span>
 
-                                <input type="password" name="password" required>
+                                <input type="password" id = "user_password2" name="password" required>
                             </div>
 
                             <div class="submit-button" id="reg-submit">
-                                <button type="submit" name="submit">Log In</button>
+                                <button type="submit" name="submit">Create Account</button>
                             </div>
                         </form>
                     </div>
@@ -98,6 +98,7 @@
 
     <!-- Script -->
     <script src="../src/scripts/randomizer.js"></script>
+    <script type="module" src="./register.js"></script>
 
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
