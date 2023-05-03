@@ -101,3 +101,105 @@ ion-icon {
     text-decoration: none;
     font-size: 1.35em;
 }
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 10px;
+}
+
+
+.fav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav {
+    width: 200px;
+    height: 200px;
+    margin-right: 15px; 
+    border-radius: 10px;
+  }
+
+.fav:last-child {
+    margin-right: 0;
+}
+  
+#profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+hr {
+    height: 3px;
+    width: 700px;
+    margin: 10px auto;
+    background-color: #3b3333;
+    border: none;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    margin-left: -480px;
+}
+
+#user-name {
+    color: #5c3cad;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+}
+#user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+#user-tag {
+    display: block;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+
+#user-bio {
+    margin-top: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.edit-profile-container {
+    position: relative;
+    margin-top: 10px;
+  }
+  
+.edit-profile-button {
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #5c3cad;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-profile-button:hover {
+    background-color: #46179f;
+  }
+  
