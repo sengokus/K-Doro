@@ -53,15 +53,12 @@ ion-icon {
 }
 
 #logo {
-    font-family: 'Sen', sans-serif;
-    font-size: 5em;
-    letter-spacing: -0.08em;
-    color: rgb(236, 239, 244);
     position: absolute;
     display: flex;
     justify-content: left;
-    left: 0.6em;
-    top: 0.2em;
+    left: 3em;
+    top: 0.6em;
+    height: 8.7em;
 }
 
 /* Navigation */
@@ -100,4 +97,119 @@ ion-icon {
     color: rgb(236, 239, 244);
     text-decoration: none;
     font-size: 1.35em;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 12%;
+    margin-bottom: 10px;
+}
+
+.fav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav {
+    width: 15em;
+    max-width: 16em;
+    height: 15em;
+    margin-right: 0.2em; 
+    border-radius: 0.3em;
+    transition: 0.3s all ease;
+}
+
+.fav:hover {
+    height: 16em;
+    width: 16em;
+}
+
+.fav:last-child {
+    margin-right: 0;
+}
+  
+#profile-pic {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+hr {
+    height: 0.09em;
+    width: 50em;
+    margin: 1em auto;
+    background-color: rgb(29, 40, 58);
+    border: none;
+}
+
+#fav-text {
+    font-family: 'Sen', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -30%;
+    margin-bottom: 0.3em;
+    letter-spacing: -0.08em;
+}
+
+#user-name {
+    color: rgb(29, 40, 58);
+    font-family: 'Sen', sans-serif;
+    font-weight: bold; 
+    font-size: 2.1em;
+    margin-top: 5px;
+    letter-spacing: -0.08em;
+}
+
+#user-info {
+    display: flex;
+    color: rgb(29, 40, 58);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+#user-tag {
+    display: block;
+    margin-top: 0.2em;
+    font-family: 'Sen', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: -0.08em;
+}
+
+#user-bio {
+    margin-top: 3.2em;
+    font-family: 'Public-Sans', sans-serif;
+    font-weight: bold;
+}
+
+.edit-profile-container {
+    position: block;
+    margin: 0.8em 0.1em;
+  }
+  
+.edit-profile-button {
+    padding: 0.5em 0.7em;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(142, 166, 212);
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+.edit-profile-button:hover {
+    background-color:rgb(87, 113, 160);
 }
