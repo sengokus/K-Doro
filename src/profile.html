@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+    <script src="./scripts/login.js"></script>  
 </head>
 <body>
     <!-- Temp banner, might be changed or deleted -->
@@ -28,13 +30,13 @@
             <li>
                 <span class="logout-icon">
                     <ion-icon name="exit-outline"></ion-icon>
-                    <a href="#" onclick="" id="home-label">Log Out</a>
+                    <a href="#" onclick="" class="home-label">Log Out</a>
                 </span>
             </li>
             <li>
                 <span class="back-icon">
                     <ion-icon name="home-outline"></ion-icon>
-                    <a href="../index.html" id="home-label">Home</a>
+                    <a href="../index.html" class="home-label">Home</a>
                 </span>
             </li>
         </ul>
@@ -47,14 +49,12 @@
             <span id="user-bio"><p>kung ang tagalog ng tree ay punong-puno na ako sa 'yo.</p></span>
             <div class="edit-profile-container">
                 <button class="edit-profile-button">Edit Profile</button>
-              </div>
+            </div>
         </div>
     </div>
 
     <hr>
-    <div class="fav-text">
-        <h2>Favorites</h3>
-    </div>
+    <h2 id="fav-text">Favorites</h2>
     <div class="fav-container">
         <img src="../resources/img/nct2021.jpg" class="fav">
         <img src="../resources/img/twice.jfif" class="fav">

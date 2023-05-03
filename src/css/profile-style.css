@@ -106,10 +106,9 @@ ion-icon {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 12%;
     margin-bottom: 10px;
 }
-
 
 .fav-container {
     display: flex;
@@ -118,19 +117,26 @@ ion-icon {
 }
 
 .fav {
-    width: 200px;
-    height: 200px;
-    margin-right: 15px; 
-    border-radius: 10px;
-  }
+    width: 15em;
+    max-width: 16em;
+    height: 15em;
+    margin-right: 0.2em; 
+    border-radius: 0.3em;
+    transition: 0.3s all ease;
+}
+
+.fav:hover {
+    height: 16em;
+    width: 16em;
+}
 
 .fav:last-child {
     margin-right: 0;
 }
   
 #profile-pic {
-    width: 220px;
-    height: 220px;
+    width: 15em;
+    height: 15em;
     border-radius: 50%;
     object-fit: cover;
     display: flex;
@@ -140,31 +146,37 @@ ion-icon {
 }
 
 hr {
-    height: 3px;
-    width: 700px;
-    margin: 10px auto;
-    background-color: #3b3333;
+    height: 0.09em;
+    width: 50em;
+    margin: 1em auto;
+    background-color: rgb(29, 40, 58);
     border: none;
 }
 
-h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 35px;
+#fav-text {
+    font-family: 'Sen', sans-serif;
+    font-size: 3em;
     font-weight: bold;
-    color: #333;
+    color: rgb(29, 40, 58);
     text-align: center;
-    margin-bottom: 10px;
     text-transform: uppercase;
-    margin-left: -480px;
+    margin-left: -30%;
+    margin-bottom: 0.3em;
+    letter-spacing: -0.08em;
 }
 
 #user-name {
-    color: #5c3cad;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(29, 40, 58);
+    font-family: 'Sen', sans-serif;
+    font-weight: bold; 
+    font-size: 2.1em;
     margin-top: 5px;
+    letter-spacing: -0.08em;
 }
+
 #user-info {
     display: flex;
+    color: rgb(29, 40, 58);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -173,33 +185,34 @@ h2 {
 
 #user-tag {
     display: block;
-    margin-top: 5px;
-    font-family: sans-serif;
+    margin-top: 0.2em;
+    font-family: 'Sen', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: -0.08em;
 }
 
 #user-bio {
-    margin-top: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 3.2em;
+    font-family: 'Public-Sans', sans-serif;
+    font-weight: bold;
 }
 
 .edit-profile-container {
-    position: relative;
-    margin-top: 10px;
+    position: block;
+    margin: 0.8em 0.1em;
   }
   
 .edit-profile-button {
-    margin-top: auto;
-    margin-bottom: 10px;
-    padding: 7px 10px;
-    font-size: 10px;
+    padding: 0.5em 0.7em;
+    font-size: 0.9em;
     font-weight: bold;
     color: white;
-    background-color: #5c3cad;
+    background-color: rgb(142, 166, 212);
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3em;
     cursor: pointer;
+    transition: 0.3s all ease;
 }
 .edit-profile-button:hover {
-    background-color: #46179f;
-  }
-  
+    background-color:rgb(87, 113, 160);
+}

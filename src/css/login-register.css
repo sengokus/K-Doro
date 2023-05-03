@@ -277,7 +277,7 @@ ion-icon {
     padding: 0.7em 2em;
     border: none;
     border-radius: 0.5em;
-    background-color: rgba(142, 166, 212);
+    background-color: rgb(142, 166, 212);
     color:rgb(236, 239, 244);
     box-shadow: 0 0.2em rgb(63, 67, 72);
     transition: 0.3s all ease;
