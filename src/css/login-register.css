@@ -53,15 +53,12 @@ ion-icon {
 }
 
 #logo {
-    font-family: 'Sen', sans-serif;
-    font-size: 5em;
-    letter-spacing: -0.08em;
-    color: rgb(236, 239, 244);
     position: absolute;
     display: flex;
     justify-content: left;
-    left: 0.6em;
-    top: 0.2em;
+    left: 3em;
+    top: 0.6em;
+    height: 8.7em;
 }
 
 /* Navigation */
