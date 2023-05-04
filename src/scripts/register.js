@@ -32,7 +32,7 @@ export async function registerUser(email, username, password1, password2){
             if (password1 != password2) {
               throw new Error('Please make sure passwords match.');
             }
-            if (password1.length < 3) {
+            if (password1.length < 8) {
               throw new Error('Password is weak');
             }
              try {

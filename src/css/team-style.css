@@ -15,14 +15,14 @@
 
 /* Background animation */
 /* Off to preserve framerate */
-/* @keyframes animatebackground {
+@keyframes animatebackground {
     from {
         background-position: left;
     }
     to {
         background-position: right;
     }
-} */
+}
 
 body {
     background-image: var(--gradient);
@@ -39,17 +39,6 @@ body {
 
 ion-icon {
     font-size: 1.3em;
-}
-
-/* Banner */
-#banner {
-    position: absolute;
-    width: 100%;
-    height: 13vh;
-    object-fit: cover;
-    object-position: 100% 87%;
-    -webkit-filter: brightness();
-    filter: brightness(0.7);
 }
 
 #logo {
