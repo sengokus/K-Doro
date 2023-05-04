@@ -8,22 +8,21 @@ const registerForm = document.getElementById("register");
 
 // Add event listener for form submission
 registerForm.addEventListener("submit", (event) => {
-  event.preventDefault(); // prevent the default form submission behavior
+	event.preventDefault(); // prevent the default form submission behavior
 
-  // Get the user's email, username, and password
-  const email = document.getElementById("user_email").value;
-  const username = document.getElementById("user_name").value;
-  const password1 = document.getElementById("user_password1").value;
-  const password2 = document.getElementById("user_password2").value;
+	// Get the user's email, username, and password
+	const email = document.getElementById("user_email").value;
+	const username = document.getElementById("user_name").value;
+	const password1 = document.getElementById("user_password1").value;
+	const password2 = document.getElementById("user_password2").value;
 
-  // TODO: Use the email, username, and password to register the user
-  console.log(`Registering user: ${email}, ${username}, ${password1}`);
-  registerUser(email,username,password1, password2);
+	// TODO: Use the email, username, and password to register the user
+	console.log(`Registering user: ${email}, ${username}, ${password1}`);
+	registerUser(email,username,password1, password2);
 });
 
 
-export async function registerUser(email, username, password1, password2){
-
+export async function registerUser(email, username, password1, password2) {
     try {
         if (username === "" || username === " " || password1 === " " || password1 === "") {
             throw new Error('Username or Password is empty');
@@ -48,7 +47,7 @@ export async function registerUser(email, username, password1, password2){
             } catch (e) {
                 console.error("Error adding document: ", e);
             }
-    } catch (e) {
-      alert(e);
+    	} catch (e) {
+    		alert(e);
     }
- }
+}
