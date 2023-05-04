@@ -7,6 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="./src/css/index.css">
+        <link rel="stylesheet" href="./src/css/loader-style.css">
+        <link rel="stylesheet" href="./src/css/banner-style.css">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
@@ -16,11 +19,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
         
         <script src="./src/scripts/login.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     </head>
 
     <body>
+
+
         <!-- Temp banner, might be changed or deleted -->
-        <img src="./resources/img/red-velvet-bg.jpg" id="banner">
+        <img src="./resources/img/aespa_girls.jpg" id="banner">
         
         <!-- Logo, not final -->
         <span class="logo" id="logo"><img src="./resources/img/logo_1x.png"></span>
@@ -81,10 +88,17 @@
                 </div>
             </div>
         </div>
-        
+            <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
+    <script type="text/javascript" src="./src/scripts/loader.js"></script> 
     <script type="module" src="/index.js"></script>
-    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ 
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
