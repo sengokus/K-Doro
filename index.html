@@ -2,12 +2,17 @@
 <html>
     <head>
         <title>K-Doro</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./src/css/index.css">
+        <link rel="stylesheet" href="./src/css/loader-style.css">
+        <link rel="stylesheet" href="./src/css/banner-style.css">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
-<<<<<<< Updated upstream
-=======
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,38 +20,84 @@
         
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
->>>>>>> Stashed changes
     </head>
 
     <body>
-        <nav class="login">
+
+
+        <!-- Temp banner, might be changed or deleted -->
+        <img src="./resources/img/aespa_girls.jpg" id="banner">
+        
+        <!-- Logo, not final -->
+        <span class="logo" id="logo"><img src="./resources/img/logo_1x.png"></span>
+
+        <!-- Navigation bar -->
+        <nav class="nav">
             <ul>
                 <li>
-                    <a href="#">
-                        <span class="login-icon">
-                            <ion-icon name="person-circle-outline"></ion-icon>
-                        </span>
-                        <span class="text">Sign in</span>
-                    </a>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="./src/login.html" class="login-label">Log In</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="about-icon">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <a href="./src/about.html" class="about-label">About</a>
+                    </span>
                 </li>
             </ul>
         </nav>
 
-        <div class="unit-select">
-            <label>Select a label</label>
-            
+        <!-- Unit select grid -->
+        <div class="unit-select">            
             <div class="label-grid-row">
+                <label id="select-label">Select a label</label>
                 <div class="label-grid-column">
-                    <img src="img/sm.jpg"></img>
-                    <img src="img/yg.jpg"></img>
-                    <img src="img/jyp.jpg"></img>
-                    <img src="img/hybe.jpg"></img>
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr class="ent-img">
+                            <th>
+                                <a href="./src/group.html?group=hybe"><img src="./resources/img/hybe.jpg", alt="HYBE Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="./src/group.html?group=jyp"><img src="./resources/img/jyp.jpg", alt="JYP Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="./src/group.html?group=sm"><img src="./resources/img/sm.jpg", alt="SM Entertainment"></a>
+                            </th>
+                            <th>
+                                <a href="./src/group.html?group=yg"><img src="./resources/img/yg.jpg", alt="YG Entertainment"></a>
+                            </th>
+                        </tr>
+                        <tr class="ent-label">
+                            <td>
+                                <label>HYBE</label>
+                            </td>
+                            <td>
+                                <label>JYP</label>
+                            </td>
+                            <td>
+                                <label>SM</label>
+                            </td>
+                            <td>
+                                <label>YG</label>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-    </body>
+            <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
 
-<script src="script.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
+    <script type="text/javascript" src="./src/scripts/loader.js"></script> 
+    <script type="module" src="/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ 
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
 </html>

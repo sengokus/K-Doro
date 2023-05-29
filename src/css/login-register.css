@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Linear gradient background animation */
+:root {
+    --gradient: linear-gradient(
+        85deg, 
+        rgb(255, 196, 232),
+        rgb(255, 229, 187),
+        rgb(211, 227, 255),
+        rgb(197, 255, 172));
+}
+
+/* Background animation */
+/* Off to preserve framerate */
+@keyframes animatebackground {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+body {
+    background-image: var(--gradient);
+    background-size: 300%;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-name: animatebackground;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+ion-icon {
+    font-size: 1.3em;
+}
+
+
+#logo {
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 3em;
+    top: 0.6em;
+    height: 8.7em;
+}
+
+/* Navigation */
+.nav {
+    font-family: 'Public Sans', sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    right: 1em;
+    top: 2.1em;
+    color: rgb(236, 239, 244);
+}
+
+.nav ion-icon {
+    transform: translateY(15%);
+}
+
+.nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 1em 0.2em;
+}
+
+.nav span {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 0.8em;
+    transition: 0.3s all ease;
+}
+
+.nav span:hover, .nav span:active {
+    background-color: rgba(142, 166, 212, 0.45);
+}
+
+.nav ul li a {
+    color: rgb(236, 239, 244);
+    text-decoration: none;
+    font-size: 1.35em;
+}
+
+/* Login */
+.login-container {
+    display: inline-flex;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 28%;
+}
+
+.left-pane img {
+    width: 25em;
+    height: 30em;
+    object-fit: cover;
+    object-position: 100% 20%;
+    border-radius: 2em;
+    /* transition: 0.3s all ease; */
+}
+
+/* .left-pane img:hover {
+    width: 26em;
+    height: 26em;
+    border-radius: 0.5em;
+    box-shadow: 0.08em 0.08em 0.02em rgba(63, 67, 72, 0.2);
+} */
+
+.right-pane {
+    font-family: 'Sen', sans-serif;
+    color: rgb(29, 40, 58);
+    /* background-color: #E8F4F3; */
+    /* border-radius: 3em; */
+}
+
+#login-pane {
+    padding-top: 3em;
+}
+
+#login-page-label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.7em;
+    font-family: 'Sen', sans-serif;
+    font-size: 3.2em;
+    font-weight: bold;
+    letter-spacing: -0.08em;
+    color: rgb(29, 40, 58);
+}
+
+/*  */
+#reg-pane {
+    padding-top: 1.1em;
+}
+
+#reg-page-label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.7em;
+    font-family: 'Sen', sans-serif;
+    font-size: 3.2em;
+    font-weight: bold;
+    letter-spacing: -0.08em;
+    color: rgb(29, 40, 58);
+}
+/*  */
+
+.input {
+    font-family: 'Public Sans', sans-serif;
+    transition: 0.3s all ease;
+}
+
+#email-icon, #user-icon, #password-icon {
+    position: absolute;
+    padding-left: 2em;
+}
+
+.email-icon ion-icon[name="at-outline"], .login-icon ion-icon[name="people-outline"], .password-icon ion-icon[name="lock-closed-outline"] {
+    position: absolute;
+}
+
+.input label {
+    position: absolute;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    /* padding-top: 0.2em; */
+    padding-left: 2em;
+}
+
+.input input {
+    width: 20em;
+    height: 2.5em;
+    border: none;
+    font-size: 1em;
+    /* border-radius: 0.5em; */
+    padding-left: 0.9em;
+    margin: 1em 2em;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: transparent;
+    transition: 0.3s all ease;
+}
+
+.input input:active, .input input:focus {
+    outline: none;
+}
+
+.input:hover, .input:focus {
+    background-color: rgba(142, 166, 212, 0.45);
+    border-radius: 1.2em;
+    padding-top: 1.2em;
+    margin: 0.7em;
+}
+
+#username-label, #password-label, #password-again-label, #email-label {
+    margin: -0.06em 1.5em;
+}
+
+/* #password-again {
+    position: absolute;
+    padding-left: 2em;
+    margin: -0.1em -0.4em;
+} */
+
+.input input[type="password"] {
+    /* letter-spacing: 0.175em; */
+}
+
+.input input[type="username"], .input input[type="password"], .input input[type="email"] {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.input ion-icon {
+    transform: translateY(-10%);
+}
+
+.remember-box {
+    font-family: 'Public Sans', sans-serif;
+    letter-spacing: -0.03em;
+    position: absolute;
+    /* display: inline-block; */
+    margin: 0.5em 0.2em;
+    border-radius: 0.5em;
+    left: 27em;
+}
+
+.remember-box input {
+    cursor: pointer;
+    /* opacity: 0; */
+    margin: auto 0.5em;
+}
+
+.remember-box label {
+    position: inline;
+}
+
+#login-submit {
+    margin: 1.3em auto;
+    padding-top: 1.2em;
+}
+
+#reg-submit {
+    margin: -0.5em auto;
+    padding-top: 0.6em;
+}
+
+.submit-button button {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0.7em 2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: rgb(142, 166, 212);
+    color:rgb(236, 239, 244);
+    box-shadow: 0 0.2em rgb(63, 67, 72);
+    transition: 0.3s all ease;
+}
+
+.submit-button button:hover {
+    background-color: rgb(87, 113, 160);
+}
+
+.submit-button button:active {
+    transition: 0.08s all ease;
+    background-color: rgb(87, 113, 160);
+    box-shadow: 0 0.05em rgb(26, 29, 32);
+    transform: translateY(0.2em);
+}
+
+.signup {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.8em;
+    color: rgb(29, 40, 58);
+}
+
+.signup a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    transition: 0.3s all ease;
+}
+
+.signup a:hover {
+    color: rgb(83, 114, 170);
+}
+/* Remove white background for autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}

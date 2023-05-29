@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>K-Doro</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../src/css/index.css">
+        <link rel="stylesheet" href="../src/css/loader-style.css">
+        <link rel="stylesheet" href="../src/css/banner-style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+        <script src="./scripts/login.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Temp banner, might be changed or deleted -->
+        <img src="../resources/img/aespa_girls.jpg" id="banner">
+        
+        <!-- Logo, not final -->
+        <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+
+        <!-- Navigation bar -->
+        <nav class="nav">
+            <ul>
+                <li>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="login.html" class="login-label">Log In</a>
+                    </span>
+                </li>   
+                <li>
+                    <span class="back-icon">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                        <a href="../index.html" class="home-label">Back</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="group-hybe" class="group-select">
+            <div class="label-grid-row">
+                <img src="../resources/img/hybe_png.png" class="label-logo">
+                <div class="label-grid-column">
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr>
+                            <th>
+                                <a href="choose-call.html?band=bts"><img src="../resources/img/bts.jpg", alt="BTS"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=txt"><img src="../resources/img/txt.jpg", alt="TXT"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=svt"><img src="../resources/img/svt.jpeg", alt="SEVENTEEN"></a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>BTS</label>
+                            </td>
+                            <td>
+                                <label>TXT</label>
+                            </td>
+                            <td>
+                                <label>SEVENTEEN</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="group-jyp" class="group-select">            
+            <div class="label-grid-row">
+                <img src="../resources/img/jyp_png.png" class="label-logo">
+                <div class="label-grid-column">
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr>
+                            <th>
+                                <a href="choose-call.html?band=twice"><img src="../resources/img/twice.jfif", alt="TWICE"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=skz"><img src="../resources/img/skz.jpg", alt="STRAY KIDS"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=itzy"><img src="../resources/img/itzy.jpg", alt="ITZY"></a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>TWICE</label>
+                            </td>
+                            <td>
+                                <label>STRAY KIDS</label>
+                            </td>
+                            <td>
+                                <label>ITZY</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="group-sm" class="group-select">            
+            <div class="label-grid-row">
+                <img src="../resources/img/sm_png.png" class="label-logo">
+                <div class="label-grid-column">
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr>
+                            <th>
+                                <a href="choose-call.html?band=exo"><img src="../resources/img/exo.jpeg", alt="EXO"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=rv"><img src="../resources/img/rv.jpg", alt="RED VELVET"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=nct"><img src="../resources/img/nct2021.jpg", alt="NCT"></a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>EXO</label>
+                            </td>
+                            <td>
+                                <label>RED VELVET</label>
+                            </td>
+                            <td>
+                                <label>NCT 2021</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="group-yg" class="group-select">            
+            <div class="label-grid-row">
+                <img src="../resources/img/yg_png.png" class="label-logo">
+                <div class="label-grid-column">
+                    <table id="label-grid" cellspacing="12px" cellpadding="0">
+                        <tr>
+                            <th>
+                                <a href="choose-call.html?band=bp"><img src="../resources/img/bp.jpg", alt="BLACKPINK"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=treasure"><img src="../resources/img/treasure.jpg", alt="TREASURE"></a>
+                            </th>
+                            <th>
+                                <a href="choose-call.html?band=bigbang"><img src="../resources/img/bigbang.jpg", alt="BIGBANG"></a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>BLACKPINK</label>
+                            </td>
+                            <td>
+                                <label>TREASURE</label>
+                            </td>
+                            <td>
+                                <label>BIGBANG</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class = "loader-wrapper">
+            <span class = "loader"><span class="loader-inner"></span></span>
+        </div>
+        <script type="text/javascript" src="../src/scripts/loader.js"></script> 
+    
+    <script>
+        // get the group parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const group = urlParams.get('group');
+    
+        // show the corresponding group container
+        if (group) {
+            const selectedGroup = document.getElementById(`group-${group}`);
+            if (selectedGroup) {
+                selectedGroup.style.display = "flex";
+            }
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

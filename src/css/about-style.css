@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Linear gradient background animation */
+:root {
+    --gradient: linear-gradient(
+        85deg, 
+        rgb(255, 196, 232),
+        rgb(255, 229, 187),
+        rgb(211, 227, 255),
+        rgb(197, 255, 172));
+}
+
+/* Background animation */
+/* Off to preserve framerate */
+@keyframes animatebackground {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+body {
+    background-image: var(--gradient);
+    background-size: 300%;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-name: animatebackground;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+ion-icon {
+    font-size: 1.3em;
+}
+
+#logo {
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 3em;
+    top: 0.6em;
+    height: 8.7em;
+}
+
+/* Navigation */
+.nav {
+    font-family: 'Public Sans', sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    right: 1em;
+    top: 2.1em;
+    color: rgb(236, 239, 244);
+}
+
+.nav ion-icon {
+    transform: translateY(15%);
+}
+
+.nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 1em 0.2em;
+}
+
+.nav span {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 0.8em;
+    transition: 0.3s all ease;
+}
+
+.nav span:hover, .nav span:active {
+    background-color: rgba(142, 166, 212, 0.45);
+}
+
+.nav ul li a {
+    color: rgb(236, 239, 244);
+    text-decoration: none;
+    font-size: 1.35em;
+}
+
+.left-pane img {
+    width: 25em;
+    height: 30em;
+    object-fit: cover;
+    object-position: 100% 20%;
+    border-radius: 2em;
+    /* transition: 0.3s all ease; */
+}
+
+.right-pane {
+    font-family: 'Sen', sans-serif;
+    color: rgb(29, 40, 58);
+    /* background-color: #E8F4F3; */
+    /* border-radius: 3em; */
+}
+
+.about-container {
+    display: inline-flex;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 19%;
+}
+
+#logo-circle {
+    width: 25em;
+    height: 25em;
+    object-fit: cover;
+    /* object-position: 100% 20%; */
+    border-radius: 50%;
+}
+
+#about-label {
+    position: relative;
+    display: flex;
+    padding-top: 1em;
+    padding-left: 0.7em;
+    font-family: 'Sen', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: -0.08em;
+    transition: 0.3s all ease;
+}
+
+#about-label:hover {
+    font-size: 5.2em;
+    color:rgb(101, 142, 218);
+}
+
+#about-text {
+    position: relative;
+    display: flex;
+    text-align: left;
+    font-size: 1.5em;
+    line-height: 0.9em;
+    letter-spacing: -0.08em;
+    padding-left: 2.6em;
+    padding-right: 12em;
+    margin: 0.5em auto;
+}
+
+#meet-the-team {
+    position: absolute;
+    text-decoration: none;
+    letter-spacing: -0.08em;
+    color:rgb(236, 239, 244);
+    left: 30%;
+    padding: 0.5em 0.5em;
+    margin: 1.2em auto;
+    border-radius: 0.5em;
+    background-color: rgb(101, 142, 218);
+    transition: 0.3s all ease;
+}
+
+#meet-the-team:hover, #meet-the-team:active {
+    background-color: rgb(142, 166, 212);
+}

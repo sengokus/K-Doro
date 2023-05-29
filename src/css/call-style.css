@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#timer-container {
+	display: inline-flex;
+	align-items: center;
+	position: absolute;
+	margin: 3em;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 0.8em 1.2em;
+	border-radius: 0.6em;
+}
+
+/* #button-container {
+	background-color: rgba(255, 255, 255, 0.5);
+} */
+
+#timer {
+	color: #4d2aa5;
+	font-weight: bold;
+	font-size: 2em;
+	margin-right: 10px;
+	font-family: 'Sen', sans-serif;
+}
+
+.leave-meeting {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+	font-size: 1.2em;
+	background-color: #4d2aa5;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.leave-container a {
+	text-decoration: none;
+	padding: 8px 10px;
+	font-size: 1rem;
+	font-weight: bold;
+	color: rgb(236, 239, 244);
+	background-color: #bf1f0d;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#leave-meet {
+	font-family: 'Sen', sans-serif;
+	position: absolute;
+	bottom: 3em;
+	right: 75px;
+	transition: 0.3s all ease;
+}
+
+#leave-meet:hover {
+	background-color: #ec7979;
+}
+
+.leave-container button:hover {
+	background-color: #e73636;
+}
+
+#start-btn {
+	background-color: #4d2aa5;
+	color: rgb(236, 239, 244);
+}
+
+#break-btn {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.timer-btn {
+	font-family: 'Sen', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.timer-btn.active {
+	background-color: #4d2aa5;
+	color: #fff;
+}
+
+.video-container {
+	z-index: -1;
+	margin: 0;
+	padding: 0;
+}
+
+.soundcloud {
+	position: absolute;
+	bottom: 3%;
+	left: 3%;
+}
+
+#end-text {
+	display: grid;
+	font-family: 'Sen', sans-serif;
+	font-size: 2.5em;
+	color: rgb(236, 239, 244);
+	/* text-align: center; */
+	letter-spacing: -0.06em;
+	place-items: center;
+	align-content: center;
+	min-height: 100vh;
+	background-color: rgb(27, 25, 35);
+}
+
+#back-to-home {
+	text-decoration: none;
+	font-size: 0.6em;
+	color: rgb(236, 239, 244);
+	padding: 0.2em 0.5em;
+	border-radius: 0.4em;
+	margin: 0.8em 0;
+	background-color: rgb(83, 114, 170);
+	transition: 0.3s all ease;
+}
+
+#back-to-home:hover {
+	background-color: rgb(142, 166, 212);
+}

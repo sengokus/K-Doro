@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    max-height: 100vh;
 }
 
 /* Linear gradient background animation */
@@ -40,6 +41,7 @@ body {
 ion-icon {
     font-size: 1.3em;
 }
+
 
 #logo {
     position: absolute;
@@ -88,117 +90,125 @@ ion-icon {
     font-size: 1.35em;
 }
 
-.info-container {
+/* Selecting a unit */
+#select-label {
+    position: relative;
     display: flex;
     justify-content: center;
-    text-align: center;
-    padding-top: 12%;
-    margin-bottom: 10px;
-}
-
-.fav-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fav {
-    width: 15em;
-    max-width: 16em;
-    height: 15em;
-    margin-right: 0.2em; 
-    border-radius: 0.3em;
+    padding-top: 1em;
+    font-family: 'Sen', sans-serif;
+    letter-spacing: -0.08em;
     transition: 0.3s all ease;
+    color: rgb(29, 40, 58);
 }
 
-.fav:hover {
-    height: 16em;
-    width: 16em;
+#select-label:hover {
+    font-size: larger;
+    color: rgb(83, 114, 170);
 }
 
-.fav:last-child {
-    margin-right: 0;
-}
-  
-#profile-pic {
-    width: 15em;
-    height: 15em;
-    border-radius: 50%;
-    object-fit: cover;
+.unit-select {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-hr {
-    height: 0.09em;
-    width: 50em;
-    margin: 1em auto;
-    background-color: rgb(29, 40, 58);
-    border: none;
-}
-
-#fav-text {
-    font-family: 'Sen', sans-serif;
-    font-size: 3em;
-    font-weight: bold;
-    color: rgb(29, 40, 58);
+    font-size: 5em;
     text-align: center;
-    text-transform: uppercase;
-    margin-left: -30%;
-    margin-bottom: 0.3em;
-    letter-spacing: -0.08em;
+    padding-top: 1.5em;
 }
 
-#user-name {
-    color: rgb(29, 40, 58);
-    font-family: 'Sen', sans-serif;
-    font-weight: bold; 
-    font-size: 2.1em;
-    margin-top: 5px;
-    letter-spacing: -0.08em;
-}
-
-#user-info {
-    display: flex;
-    color: rgb(29, 40, 58);
-    flex-direction: column;
+.group-select, .call-select {
+    display: none;
     justify-content: center;
-    align-items: flex-start;
-    margin-left: 40px;
+    font-size: 5em;
+    text-align: center;
+    padding-top: 1.5em;
 }
 
-#user-tag {
+#group-hybe {
+    display: none;
+}
+
+#group-jyp {
+    display: none;
+}
+
+#group-sm {
+    display: none;
+}
+
+#group-yg {
+    display: none;
+}
+
+#band-bts {
+    display: none;
+}
+
+#band-txt {
+    display: none;
+}
+
+#band-svt {
+    display: none;
+}
+
+.label-logo {
+    height: 1em;
+    max-width: 50%;
+    padding-top: 0.8em;
+    margin: auto 0.6em;
+}
+
+.group-logo {
+    height: 1.4em;
+    max-width: 50%;
+    margin: auto 0.6em;
+    transform: translateY(0.2em);
+}
+
+.label-grid-row {
     display: block;
-    margin-top: 0.2em;
-    font-family: 'Sen', sans-serif;
-    font-size: 1.3em;
-    letter-spacing: -0.08em;
 }
 
-#user-bio {
-    margin-top: 3.2em;
-    font-family: 'Public-Sans', sans-serif;
-    font-weight: bold;
-}
-
-.edit-profile-container {
-    position: block;
-    margin: 0.8em 0.1em;
-  }
-  
-.edit-profile-button {
-    padding: 0.5em 0.7em;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: white;
-    background-color: rgb(142, 166, 212);
-    border: none;
-    border-radius: 0.3em;
-    cursor: pointer;
+.label-grid-column img {
+    margin-top: 0.5em;
+    vertical-align: middle;
+    width: 4.6em;
+    border-radius: 0.9em;
     transition: 0.3s all ease;
 }
-.edit-profile-button:hover {
-    background-color:rgb(87, 113, 160);
+
+.label-grid-column img:hover {
+    width: 5em;
+    border-radius: 0.3em;
+    box-shadow: 0.08em 0.08em 0.02em rgba(63, 67, 72, 0.2);
+}
+
+.label-grid-column tr label {
+    font-family: 'Sen', sans-serif;
+    letter-spacing: -0.08em;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    text-align: center;
+}
+
+.call-grid-column img {
+    margin-top: 0.5em;
+    vertical-align: middle;
+    height: 3em;
+    width: 4.6em;
+    object-fit: cover;
+    border-radius: 0.2em;
+    transition: 0.3s all ease;
+}
+
+.video-label {
+    display: block;
+    font-family: 'Public-Sans', sans-serif;
+    letter-spacing: -0.08em;
+    font-size: 0.3em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    text-align: center;
+    margin: 0.3em auto;
 }
