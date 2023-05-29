@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/login-register.css">
+        <link rel="stylesheet" href="../src/css/loader-style.css">
+        <link rel="stylesheet" href="../src/css/banner-style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    </head>
+
+    <body>
+        <!-- Temp banner, might be changed or deleted -->
+        <img src="../resources/img/aespa_girls.jpg" id="banner">
+
+        <!-- Logo, not final -->
+        <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+
+        <nav class="nav">
+            <ul>
+                <!-- <li>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="login.html" class="login-label">Log In</a>
+                    </span>
+                </li>    -->
+                <li>
+                    <span class="back-icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <a href="../index.html" class="home-label">Home</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="login">
+            <div class="login-container">
+                <div class="left-pane">
+                    <img src="" id="img-card">
+                </div>
+
+                <!-- TODO: Add icons for username and password --> 
+                <div class="right-pane" id="login-pane">
+                    <div class="login">
+                        <label id="login-page-label">Login</label>
+                        <form class="form active" id="login">
+                            <div class="input">
+                                <label for="login" id="username-label" >Email</label>
+                                <span class="login-icon" id="user-icon">
+                                    <ion-icon name="people-outline"></ion-icon>
+                                </span>
+
+                                <input type="email" name="email" id="email-login" placeholder="Enter email" required>
+                            </div>
+
+                            <div class="input">
+                                <label for="login" id="password-label">Password</label>
+                                <span class="password-icon" id="password-icon">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                </span>
+
+                                <input type="password" name="password" id="password-login" placeholder="Enter password" required>
+                            </div>
+
+                            <div class="remember-box">
+                                <input type="checkbox" name="remember">
+                                <label for="remember-text" id="remember-label">Remember Password</span>
+                            </div>
+
+                            <div class="submit-button" id="login-submit">
+                                <button id="login-button" name="submit" >Log In</button>
+                            </div>                        
+                        </form>
+
+                        <div class="signup">
+                            <p>Don't have an account? <a href="./register.html">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
+    <script type="text/javascript" src="../src/scripts/loader.js"></script> 
+    <!-- Script -->
+    <script src="../src/scripts/randomizer.js"></script>
+    <script type="module" src="../src/scripts/login.js"></script>
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

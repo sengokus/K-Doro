@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Linear gradient background animation */
+:root {
+    --gradient: linear-gradient(
+        85deg, 
+        rgb(255, 196, 232),
+        rgb(255, 229, 187),
+        rgb(211, 227, 255),
+        rgb(197, 255, 172));
+}
+
+/* Background animation */
+/* Off to preserve framerate */
+@keyframes animatebackground {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+body {
+    background-image: var(--gradient);
+    background-size: 300%;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-name: animatebackground;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+ion-icon {
+    font-size: 1.3em;
+}
+
+#logo {
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 3em;
+    top: 0.6em;
+    height: 8.7em;
+}
+
+/* Navigation */
+.nav {
+    font-family: 'Public Sans', sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    right: 1em;
+    top: 2.1em;
+    color: rgb(236, 239, 244);
+}
+
+.nav ion-icon {
+    transform: translateY(15%);
+}
+
+.nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 1em 0.2em;
+}
+
+.nav span {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 0.8em;
+    transition: 0.3s all ease;
+}
+
+.nav span:hover, .nav span:active {
+    background-color: rgba(142, 166, 212, 0.45);
+}
+
+.nav ul li a {
+    color: rgb(236, 239, 244);
+    text-decoration: none;
+    font-size: 1.35em;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 12%;
+    margin-bottom: 10px;
+}
+
+.fav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav {
+    width: 15em;
+    max-width: 16em;
+    height: 15em;
+    margin-right: 0.8em; 
+    border-radius: 0.3em;
+    transition: 0.3s all ease;
+}
+
+.fav:hover {
+    height: 16em;
+    width: 16em;
+}
+
+.fav:last-child {
+    margin-right: 0;
+}
+  
+#profile-pic {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+hr {
+    height: 0.09em;
+    width: 50em;
+    margin: 1em auto;
+    background-color: rgb(29, 40, 58);
+    border: none;
+}
+
+#fav-text {
+    font-family: 'Sen', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(29, 40, 58);
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -30%;
+    margin-bottom: 0.3em;
+    letter-spacing: -0.08em;
+}
+
+#user-name {
+    color: rgb(29, 40, 58);
+    font-family: 'Sen', sans-serif;
+    font-weight: bold; 
+    font-size: 2.1em;
+    margin-top: 5px;
+    letter-spacing: -0.08em;
+}
+
+#user-info {
+    display: flex;
+    color: rgb(29, 40, 58);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+#user-tag {
+    display: block;
+    margin-top: 0.2em;
+    font-family: 'Sen', sans-serif;
+    font-size: 1.3em;
+    letter-spacing: -0.08em;
+}
+
+#user-bio {
+    margin-top: 3.2em;
+    font-family: 'Public-Sans', sans-serif;
+    font-weight: bold;
+}
+
+.edit-profile-container {
+    position: block;
+    margin: 0.8em 0.1em;
+  }
+  
+.edit-profile-button {
+    padding: 0.5em 0.7em;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(142, 166, 212);
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+.edit-profile-button:hover {
+    background-color:rgb(87, 113, 160);
+}
+
+/*----------------------------------------------------------------*/
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+/* The popup form - hidden by default */
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.form-popup.show {
+  display: flex;
+}
+
+  
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+/* Add styles for edit fields */
+.edit-container input[type="text"], .edit-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2em;
+}
+
+.edit-container .save-profile-button, .edit-container .cancel-profile-button {
+    background-color: #04AA6D;
+    color: white;
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    
+}
+
+.edit-container .cancel-profile-button {
+    background-color: #f44336;
+}
+
+/* Hide edit fields by default */
+#user-name, #user-tag, #user-bio {
+    display: block;
+}
+
+#edit-name, #edit-tag, #edit-bio, .save-profile-button, .cancel-profile-button {
+    width: 50%;
+
+}
+
+
+.bold-label {
+    font-weight: bold;
+}
+
+
+label {
+    display: flex;
+    margin-bottom: 10px;
+  }

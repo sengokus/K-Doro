@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../src/css/profile-style.css">
+    <link rel="stylesheet" href="../src/css/loader-style.css">
+    <link rel="stylesheet" href="../src/css/banner-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script type="module" src="../src/scripts/login.js"></script>
+</head>
+<body>
+    <!-- Temp banner, might be changed or deleted -->
+    <img src="../resources/img/aespa_girls.jpg" id="banner">
+        
+    <!-- Logo, not final -->
+    <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+
+    <!-- Navigation bar -->
+    <nav class="nav">
+        <ul>
+            <li>
+                <span class="logout-icon">
+                    <ion-icon name="exit-outline"></ion-icon>
+                    <a class="home-label" id ="logout-button">Log Out</a>
+                </span>
+            </li>
+            <li>
+                <span class="back-icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <a class="home-label" id ="home-button">Home</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+    <div class="info-container">
+        <img src="../resources/img/giselle-1.jpg" id="profile-pic">
+        <div id="user-info">
+            <span id="user-name"><h1>""</h1></span>
+            <span id="user-tag"><h3>""</h3></span>
+            <span id="user-bio"><p>"".</p></span>
+            <div class="edit-profile-container">
+                <button class="edit-profile-button" onclick="toggleEditProfile()">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="edit-container" id= edit-profile-data style="display:none;">
+        <form id = "edit-profile-form">
+            <label for="name"><span class="bold-label">Name:</span></label>
+            <input type="text" id="edit-name" >
+
+            <label for="tag"><span class="bold-label">Username:</span></label>
+            <input type="text" id="edit-tag">
+
+            <label for="bio"><span class="bold-label">Bio:</span></label>
+            <textarea id="edit-bio"></textarea>
+
+            <div class="save-profile-button" id="edit-submit">
+                <button type="submit" name="submit">Save Profile</button>
+            </div>
+            <div class="cancel-profile-button" id="edit-cancel">
+                <button type="button"   onclick="toggleEditProfile()">Cancel</button>
+
+            </div>
+        </form>
+
+    </div>
+    
+    
+    <hr>
+    <h2 id="fav-text">Favorites</h2>
+    <div class="fav-container">
+        <img src="../resources/img/nct2021.jpg" class="fav">
+        <img src="../resources/img/twice.jfif" class="fav">
+        <img src="../resources/img/svt.jpeg" class="fav">
+    </div>
+
+    <div class = "loader-wrapper">
+        <span class = "loader"><span class="loader-inner"></span></span>
+    </div>
+    <script type="text/javascript" src="../src/scripts/loader.js"></script> 
+    <script type="module" src="../src/scripts/edit-profile.js"></script>
+    <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
+    <script type="module" src="../src/scripts/logout.js"></script>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

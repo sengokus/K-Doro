@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/login-register.css">
+        <link rel="stylesheet" href="../src/css/loader-style.css">
+        <link rel="stylesheet" href="../src/css/banner-style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+
+        <script src="./scripts/login.js"></script>  
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Temp banner, might be changed or deleted -->
+        <img src="../resources/img/aespa_girls.jpg" id="banner">
+
+        <!-- Logo, not final -->
+        <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+
+        <nav class="nav">
+            <ul>
+                <li>
+                    <span class="back-icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <a href="../index.html" class="home-label">Home</a>
+                    </span>
+                </li>
+
+                <li>
+                    <span class="login-icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <a href="./login.html" class="login-label">Log In</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="login">
+            <div class="login-container">
+                <div class="left-pane">
+                    <img src="" id="img-card">
+                </div>
+
+                <!-- TODO: Add icons for username and password -->
+                <div class="right-pane" id="reg-pane">
+                    <div class="register">
+                        <label id="reg-page-label">Register</label>
+                        <form class="form active" id="register">
+                            <div class="input">
+                                <label for="email" id="email-label">Email</label>
+                                <span class="email-icon" id="email-icon">
+                                    <ion-icon name="at-outline"></ion-icon>
+                                </span>
+
+                                <input type="email" id="user_email" placeholder = "karinayu@example.com" name="email" required>
+                            </div>
+                            <div class="input">
+                                <label for="login" id="username-label">Username</label>
+                                <span class="login-icon" id="user-icon">
+                                    <ion-icon name="people-outline"></ion-icon>                                    
+                                </span>
+                                <input type="username" id="user_name" name="username" placeholder = "Enter username" required>
+                            </div>
+
+                            <div class="input">
+                                <label for="login" id="password-label">Password</label>
+                                <span class="password-icon" id="password-icon">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                </span>
+
+                                <input type="password"  id = "user_password1" name="password" placeholder="Enter password" required>
+                            </div>
+
+                            <div class="input">
+                                <label for="login" id="password-again-label">Re-enter Password</label>
+                                <span class="password-icon" id="password-icon">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                </span>
+
+                                <input type="password" id = "user_password2" name="password" placeholder="Confirm password" required>
+                            </div>
+
+                            <div class="submit-button" id="reg-submit">
+                                <button type="submit" name="submit">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "loader-wrapper">
+            <span class = "loader"><span class="loader-inner"></span></span>
+        </div>
+        
+    <!-- Script -->
+    <script type="text/javascript" src="../src/scripts/loader.js"></script>
+    <script src="../src/scripts/randomizer.js"></script>
+    <script type="module" src="../src/scripts/register.js"></script>
+A
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

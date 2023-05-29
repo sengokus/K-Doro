@@ -1,0 +1,17 @@
+{
+  "name": "k-doro",
+  "version": "1.0.0",
+  "description": "Final Project in CMSC 126-Lab",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.22.1",
+    "jquery": "^3.6.4"
+  }
+}
