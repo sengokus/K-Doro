@@ -77,10 +77,24 @@
 #start-btn {
 	background-color: #4d2aa5;
 	color: rgb(236, 239, 244);
+	transition: 0.3s all ease;
+}
+
+#start-btn:disabled {
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: not-allowed;
+	color: #4d2aa5;
 }
 
 #break-btn {
 	background-color: rgba(255, 255, 255, 0.5);
+	transition: 0.3s all ease;
+}
+
+#break-btn:disabled {
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: not-allowed;
+	color: #4d2aa5;
 }
 
 .timer-btn {
@@ -94,7 +108,7 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.timer-btn.active {
+.timer-btn:active {
 	background-color: #4d2aa5;
 	color: #fff;
 }

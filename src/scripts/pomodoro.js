@@ -1,16 +1,11 @@
-// const timer = {
-//     pomodoro: 25,
-//     shortBreak: 5,
-//     longBreak: 15,
-//     longBreakInterval: 4
-// };
-
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("break-btn");
 const addBtn = document.getElementById("add-five");
 const minusBtn = document.getElementById("minus-five");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
+
+// TODO: sound effect
 var alarmSFX = new Audio("../resources/sfx/alarm.wav");
 
 minutes.textContent = 25;
@@ -21,6 +16,16 @@ stopBtn.addEventListener("click", breakTime);
 addBtn.addEventListener("click", addTime);
 minusBtn.addEventListener("click", subtractTime);
 
+function disableButtons() {
+    startBtn.disabled = true;
+    stopBtn.disabled = true;
+}
+
+function enableButtons() {
+    startBtn.disabled = false;
+    stopBtn.disabled = false;
+}
+
 function padZero(value) {
     // if seconds are in single digits, add a leading 0
     return value.toString().padStart(2, "0");
@@ -29,7 +34,9 @@ function padZero(value) {
 function start() {
     console.log("Starting timer...");
 
-    minutes.textContent = padZero(parseInt(minutes.textContent) -1);
+    disableButtons();
+
+    minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
     seconds.textContent = "59";
 
     // set interval to 1 second
@@ -41,8 +48,8 @@ function start() {
             seconds.textContent = "59";
         } else if (minutes.textContent === "00" && seconds.textContent === "00") {
             console.log("Time for a break...");
-            // play alarm sound
-            // break time
+            clearInterval(interval);
+            breakTime();
         } else {
             clearInterval(interval);
         }
@@ -51,6 +58,8 @@ function start() {
 
 function breakTime() {
     console.log("Taking a break...");
+
+    disableButtons();
 
     minutes.textContent = "04";
     seconds.textContent = "59";
@@ -62,6 +71,12 @@ function breakTime() {
         } else if (minutes.textContent > 0) {
             minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
             seconds.textContent = "59";
+        } else if (minutes.textContent === "00" && seconds.textContent === "00") {
+            console.log("Time to get back to work...");
+            minutes.textContent = 25;
+            seconds.textContent = "00";
+            enableButtons();
+            clearInterval(interval);
         } else {
             clearInterval(interval);
         }
@@ -71,16 +86,21 @@ function breakTime() {
 function addTime() {
     console.log("Added 5 minutes to timer...");
     minutes.textContent = padZero(parseInt(minutes.textContent) + 5);
+
+    if (minutes.textContent > 60) {
+        console.log("Unable to add more time...");
+        minutes.textContent = 25;
+    }
 }
 
 function subtractTime() {
     console.log("Subtracted 5 minutes from timer...");
     minutes.textContent = padZero(parseInt(minutes.textContent) - 5);
 
-    if (minutes.textContent < 0) {
+    if (minutes.textContent <= 0) {
+        console.log("Unable to subtract more time...");
         minutes.textContent = 25;
     }
 }
 
-// TODO: working break function
-// TODO: add 5 minute intervals to timer
+// TODO: disallow adding or subtracting time if timer is running
