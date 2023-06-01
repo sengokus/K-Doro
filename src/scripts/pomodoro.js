@@ -1,24 +1,35 @@
-const timer = {
-    pomodoro: 25,
-    shortBreak: 5,
-    longBreak: 15,
-    longBreakInterval: 4
-};
+// const timer = {
+//     pomodoro: 25,
+//     shortBreak: 5,
+//     longBreak: 15,
+//     longBreakInterval: 4
+// };
 
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("break-btn");
+const addBtn = document.getElementById("add-five");
+const minusBtn = document.getElementById("minus-five");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
-minutes.textContent = "25";
+var alarmSFX = new Audio("../resources/sfx/alarm.wav");
+
+minutes.textContent = 25;
 seconds.textContent = "00";
 
 startBtn.addEventListener("click", start);
 stopBtn.addEventListener("click", breakTime);
+addBtn.addEventListener("click", addTime);
+minusBtn.addEventListener("click", subtractTime);
+
+function padZero(value) {
+    // if seconds are in single digits, add a leading 0
+    return value.toString().padStart(2, "0");
+}
 
 function start() {
     console.log("Starting timer...");
 
-    minutes.textContent = "24";
+    minutes.textContent = padZero(parseInt(minutes.textContent) -1);
     seconds.textContent = "59";
 
     // set interval to 1 second
@@ -28,15 +39,14 @@ function start() {
         } else if (minutes.textContent > 0) {
             minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
             seconds.textContent = "59";
+        } else if (minutes.textContent === "00" && seconds.textContent === "00") {
+            console.log("Time for a break...");
+            // play alarm sound
+            // break time
         } else {
             clearInterval(interval);
         }
     }, 1000);
-}
-
-// if seconds are in single digits, add a leading 0
-function padZero(value) {
-    return value.toString().padStart(2, "0");
 }
 
 function breakTime() {
@@ -56,6 +66,20 @@ function breakTime() {
             clearInterval(interval);
         }
     }, 1000);
+}
+
+function addTime() {
+    console.log("Added 5 minutes to timer...");
+    minutes.textContent = padZero(parseInt(minutes.textContent) + 5);
+}
+
+function subtractTime() {
+    console.log("Subtracted 5 minutes from timer...");
+    minutes.textContent = padZero(parseInt(minutes.textContent) - 5);
+
+    if (minutes.textContent < 0) {
+        minutes.textContent = 25;
+    }
 }
 
 // TODO: working break function

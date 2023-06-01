@@ -28,6 +28,11 @@
 	font-family: 'Sen', sans-serif;
 }
 
+.arrow {
+	transform: translateY(0.2em);
+	cursor: pointer;
+}
+
 .leave-meeting {
 	position: absolute;
 	bottom: 10px;
