@@ -6,12 +6,13 @@
 
 #timer-container {
 	display: inline-flex;
-	align-items: center;
 	position: absolute;
+	align-items: center;
 	margin: 3em;
 	background-color: rgba(255, 255, 255, 0.5);
 	padding: 0.8em 1.2em;
 	border-radius: 0.6em;
+	background-color: rgba(200, 123, 123, 0.5);
 }
 
 /* #button-container {
@@ -19,6 +20,7 @@
 } */
 
 #timer {
+	display: inline;
 	color: #4d2aa5;
 	font-weight: bold;
 	font-size: 2em;
