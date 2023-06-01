@@ -92,9 +92,9 @@
 }
 
 #break-btn:disabled {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: #4d2aa5;
+	color: rgb(236, 239, 244);
 	cursor: not-allowed;
-	color: #4d2aa5;
 }
 
 .timer-btn {
