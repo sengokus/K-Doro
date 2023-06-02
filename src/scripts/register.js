@@ -38,7 +38,8 @@ registerForm.addEventListener("submit", (event) => {
       await setDoc(doc(db, "users", userId),{
         name: username,
         username: "@" + username,
-        bio:"Edit bio."
+        bio:"Edit bio.",
+        profilePicture:"default-profile.png",
       });
 
     })
@@ -52,12 +53,13 @@ registerForm.addEventListener("submit", (event) => {
     }
 });
 
+// Get the logout button
 const logout = document.querySelector("logout-button");
+// Add event listener for logout button
 logout.addEventListener('click', e =>{
   e.preventDefault();
-  auth.signOut.then(() => {
+  auth.signOut.then(() => { //sign out the user
     console.log("user signed out");
-
   })
 })
 

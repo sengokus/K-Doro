@@ -35,12 +35,14 @@ auth.onAuthStateChanged(async user => {
     console.log("Document data 444:", userData);
 
     // Assign values to variables
-    const { username, bio, name} = userData;
+    const { username, bio, name, profilePicture} = userData;
+    const img = document.getElementById("profile-pic");
 
     // Set values in HTML elements
     document.getElementById("user-name").innerHTML = name;
     document.getElementById("user-tag").innerHTML = username;
     document.getElementById("user-bio").innerHTML = bio;
+    img.setAttribute('src', profilePicture);
 
     } else {
     console.log("No such document!");

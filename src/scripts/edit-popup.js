@@ -1,6 +1,6 @@
-
 function toggleEditProfile() {
-    const editContainer = document.querySelector('.edit-container');
-    editContainer.style.display = (editContainer.style.display === 'none') ? 'block' : 'none';
-  } 
+  const editContainer = document.getElementById("edit-profile-data");
+  editContainer.style.display = (editContainer.style.display === 'none') ? 'block' : 'none';
+}
+
 

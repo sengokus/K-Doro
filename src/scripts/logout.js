@@ -26,17 +26,17 @@ logout.addEventListener('click', e =>{
 
 
 
-home.addEventListener('click', e =>{
-  e.preventDefault();
-  signOut(auth).then(() => {
-    console.log("go to home page");
-    window.location.href = "home.html";
+// home.addEventListener('click', e =>{
+//   e.preventDefault();
+//   signOut(auth).then(() => {
+//     console.log("go to home page");
+//     window.location.href = "../../index.html";
 
-  }).catch((error) => {
-    // An error happened.
-    alert("yut");
-  });
-})
+//   }).catch((error) => {
+//     // An error happened.
+//     alert("yut");
+//   });
+// })
 
   // export async function registerUser(email, username, password1, password2){
 
