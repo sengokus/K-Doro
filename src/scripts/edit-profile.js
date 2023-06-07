@@ -1,6 +1,6 @@
 import { db } from "../../index.js";
 import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js';
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+import { getAuth, updateProfile, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-storage.js";
 
 const auth = getAuth();
@@ -8,9 +8,7 @@ const editForm = document.getElementById("edit-profile-form");
 const nameField = document.getElementById("edit-name");
 const tagField = document.getElementById("edit-tag");
 const bioField = document.getElementById("edit-bio");
-
-
-const edit = document.getElementById("edit-button");
+const profilePictureInput = document.getElementById("edit-profile-picture");
 
 function previewProfilePicture(event) {
   const file = event.target.files[0];
@@ -28,28 +26,89 @@ function previewProfilePicture(event) {
   }
 }
 
-const profilePictureInput = document.getElementById("edit-profile-picture");
 profilePictureInput.addEventListener("change", previewProfilePicture);
 
-edit.addEventListener('click', async () => {
+// Function to prefill the edit profile form with user data
+const prefillEditProfileForm = (userData) => {
+  nameField.value = userData.name;
+  tagField.value = userData.username.replace('@', '');
+  bioField.value = userData.bio;
+};
+
+// Function to update the user's profile data
+const updateProfileData = async (name, username, bio, profilePicture) => {
   try {
-    const user = auth.currentUser;
-    if (user) {
-      const userId = user.uid;
-      const userDoc = await getDoc(doc(db, "users", userId));
-      const userData = userDoc.data();
-
-      document.getElementById("edit-name").value = userData.name;
-      document.getElementById("edit-tag").value = userData.username.replace('@', '');
-      document.getElementById("edit-bio").value = userData.bio;
+    const userId = localStorage.getItem("uid");
+    if (!userId) {
+      throw new Error("User ID not found in local storage.");
     }
-  } catch (e) {
-    console.error(e);
-  }
-});
 
-// Add event listener for form submission
-editForm.addEventListener("submit", async (event) => {
+    // Get the user's current authentication state
+    
+    const user = auth.currentUser;
+
+    // If the user is not already signed in, sign in using the stored UID
+    if (!user) {
+      signInAnonymously(auth);
+    }
+
+    // Get the updated user object
+    const updatedUser = auth.currentUser;
+
+    // Retrieve user data from session storage
+    const storedUserData = sessionStorage.getItem("userData");
+    let userData = storedUserData ? JSON.parse(storedUserData) : {};
+
+    // Update the user's profile picture if a new one is selected
+    if (profilePicture) {
+      const storageRef = ref(getStorage(), `profile-pictures/${userId}`);
+      await uploadBytes(storageRef, profilePicture);
+      const profilePictureUrl = await getDownloadURL(storageRef);
+
+      await setDoc(doc(db, "users", userId), {
+        name: name,
+        username: "@" + username,
+        bio: bio,
+        profilePicture: profilePictureUrl
+      });
+
+      // Update user data in session storage
+      userData = {
+        ...updatedUser,
+        name: name,
+        username: "@" + username,
+        bio: bio,
+        profilePicture: profilePictureUrl
+      };
+      sessionStorage.setItem("userData", JSON.stringify(userData));
+    } else {
+      // If no new profile picture is selected, update the other fields only
+      await setDoc(doc(db, "users", userId), {
+        name: name,
+        username: "@" + username,
+        bio: bio,
+        profilePicture: userData.profilePicture || "",
+      });
+
+      // Update user data in session storage
+      userData = {
+        ...updatedUser,
+        name: name,
+        username: "@" + username,
+        bio: bio,
+        profilePicture: userData.profilePicture || ""
+      };
+      sessionStorage.setItem("userData", JSON.stringify(userData));
+    }
+
+    location.reload();
+  } catch (e) {
+    alert(e);
+  }
+};
+
+
+editForm.addEventListener("submit", (event) => {
   event.preventDefault(); // prevent the default form submission behavior
 
   // Get the user's name, username, bio, and profile picture
@@ -58,40 +117,12 @@ editForm.addEventListener("submit", async (event) => {
   const bio = bioField.value;
   const profilePicture = profilePictureInput.files[0];
 
-  // TODO: Use the name, username, bio, and profile picture to update the user's profile
-
-  try {
-    const user = auth.currentUser;
-    if (user) {
-      const userId = user.uid;
-      
-      // Update the user's profile picture if a new one is selected
-      if (profilePicture) {
-        const storageRef = ref(getStorage(), `profile-pictures/${userId}`);
-        await uploadBytes(storageRef, profilePicture);
-        const profilePictureUrl = await getDownloadURL(storageRef);
-        
-        await setDoc(doc(db, "users", userId), {
-          name: name,
-          username: "@" + username,
-          bio: bio,
-          profilePicture: profilePictureUrl
-        });
-      
-
-      } else {
-        // If no new profile picture is selected, update the other fields only
-        await setDoc(doc(db, "users", userId), {
-          name: name,
-          username: "@" + username,
-          bio: bio,
-          profilePicture: userData.profilePicture,
-        });
-      }
-      
-      location.reload();
-    }
-  } catch (e) {
-    alert(e);
-  }
+  // Update the user's profile data
+  updateProfileData(name, username, bio, profilePicture);
 });
+
+// Retrieve user data from session storage and prefill the edit profile form
+const userData = JSON.parse(sessionStorage.getItem("userData"));
+if (userData) {
+  prefillEditProfileForm(userData);
+}

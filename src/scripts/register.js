@@ -39,7 +39,7 @@ registerForm.addEventListener("submit", (event) => {
         name: username,
         username: "@" + username,
         bio:"Edit bio.",
-        profilePicture:"default-profile.png",
+        profilePicture:"https://firebasestorage.googleapis.com/v0/b/kdoro-f0528.appspot.com/o/profile-pictures%2Fdefault-profile.png?alt=media&token=45b2ff73-7964-4c24-aed2-04473d5758b1",
       });
 
     })

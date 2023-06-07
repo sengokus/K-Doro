@@ -1,24 +1,22 @@
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+// Define the updateLoginButton function within the global scope
+window.updateLoginButton = async () => {
+  const storedUID = localStorage.getItem("uid");
 
-// Function to update the login button based on the user's authentication state
-function updateLoginButton() {
-  const auth = getAuth();
-  const user = auth.currentUser;
-  console.log('updateLoginButton');
+  if (storedUID) {
+    try {
+      // User is logged in
+      const loginButton = document.getElementById("login-button");
+      loginButton.textContent = "Profile";
+      loginButton.href = "profile.html";
 
-  if (user) {
-    // User is logged in
-    const loginButton = document.getElementById("login-button");
-    loginButton.textContent = "Profile";
-    loginButton.href = "./src/profile.html";
-
-
-
-    const homeButton = document.getElementById("home-button");
-    homeButton.textContent = "Profile";
-    homeButton.href = "./src/login.html";
+      const homeButton = document.getElementById("home-button");
+      homeButton.textContent = "Profile";
+      homeButton.href = "profile.html";
+    } catch (error) {
+      // Handle the error
+    }
   }
-}
+};
 
-// Add an event listener for DOMContentLoaded event
-document.addEventListener("DOMContentLoaded", updateLoginButton);
+// Call the updateLoginButton function immediately
+window.updateLoginButton();
