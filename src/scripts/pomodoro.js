@@ -91,10 +91,9 @@ function breakTime() {
             
             if (doneMessage) {
                 alarmSFX.pause();
-                breakTime();
+                minutes.textContent = 25;
+                seconds.textContent = "00";
             }
-            minutes.textContent = 25;
-            seconds.textContent = "00";
             clearInterval(interval);
             enableButtons();
         } else {
