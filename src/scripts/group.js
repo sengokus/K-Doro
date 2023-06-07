@@ -17,12 +17,12 @@ const groupData = {
     }
 };
 
-    // Get the group parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const group = urlParams.get('group');
+// Get the group parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const group = urlParams.get('group');
 
-    // Show the corresponding group container
-    if (group) {
+// Show the corresponding group container
+if (group) {
     const selectedGroup = document.getElementById(`group-${group}`);
     if (selectedGroup) {
         selectedGroup.style.display = "flex";

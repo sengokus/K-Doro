@@ -55,9 +55,8 @@ function start() {
 
     disableButtons();
 
-    // minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
-    minutes.textContent = "00" // edit later
-    seconds.textContent = "05";
+    minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
+    seconds.textContent = "59";
 
     // set interval to 1 second
     const interval = setInterval(() => {
@@ -88,8 +87,8 @@ function breakTime() {
 
     disableButtons();
 
-    minutes.textContent = "00"; // edit later
-    seconds.textContent = "05";
+    minutes.textContent = "04";
+    seconds.textContent = "59";
 
     // set interval to 1 second
     const interval = setInterval(() => {

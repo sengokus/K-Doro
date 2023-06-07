@@ -42,22 +42,41 @@
         <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1489095391&color=%23e8e8e8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ive_official" title="IVE" target="_blank" style="color: #cccccc; text-decoration: none;">IVE</a> · <a href="https://soundcloud.com/ive_official/i-am" title="I AM" target="_blank" style="color: #cccccc; text-decoration: none;">I AM</a></div>
     </div>
     
-    <div class="video-container">
+    <!-- <div class="video-container">
         <div style="width: 100%; height: 100vh; float: none; clear: both;">
             <iframe 
-                src="https://www.youtube.com/embed/0xdB_vo4r2c?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=0xdB_vo4r2c" 
+                src="https://www.youtube.com/embed/0xdB_vo4r2c?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=0xdB_vo4r2c"
+                `https://www.youtube.com/embed/${link}?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${link}?" 
                 width="100%" height="100%" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
-    </div>
+    </div> -->
+    
+    <div class="video-container" id="video-container"></div>
 
+    <div class="band-container">
+      <div id="band-bts-vid"></div>
+      <div id="band-txt-vid"></div>
+      <div id="band-svt-vid"></div>
+      <div id="band-twice-vid"></div>
+      <div id="band-skz-vid"></div>
+      <div id="band-itzy-vid"></div>
+      <div id="band-exo-vid"></div>
+      <div id="band-rv-vid"></div>
+      <div id="band-nct2021-vid"></div>
+      <div id="band-bp-vid"></div>
+      <div id="band-treasure-vid"></div>
+      <div id="band-bigbang-vid"></div>
+    </div>
+    
     <div class="leave-container">
         <a href="end.html" id="leave-meet">Leave Meeting</a>
     </div>
 
+    <script type="module" src="./scripts/call.js"></script>
     <script type="module" src="./scripts/pomodoro.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

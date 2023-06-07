@@ -12,7 +12,6 @@
 	background-color: rgba(255, 255, 255, 0.5);
 	padding: 0.8em 1.2em;
 	border-radius: 0.6em;
-	background-color: rgba(200, 123, 123, 0.5);
 }
 
 /* #button-container {
@@ -127,9 +126,25 @@
 }
 
 .video-container {
-	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+  
+.band-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#video-container {
+	
+	z-index: -1;/* display: flex; */
 	margin: 0;
 	padding: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .soundcloud {
