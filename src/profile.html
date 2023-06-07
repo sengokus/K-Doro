@@ -64,23 +64,30 @@
     
     
     <div class="edit-container" id= edit-profile-data style="display:none;">
-        <form id = "edit-profile-form">
-            <label for="name"><span class="bold-label">Name:</span></label>
-            <input type="text" id="edit-name" value="">
-
-            <label for="tag"><span class="bold-label">Username:</span></label>
-            <input type="text" id="edit-tag" value="">
-
-            <label for="bio"><span class="bold-label">Bio:</span></label>
-            <textarea id="edit-bio" value=""></textarea>
-
-            <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
-
-            <div class="save-profile-button" id="edit-submit">
-                <button type="submit" name="submit">Save Profile</button>
+        <form id="edit-profile-form">
+            <div class="input">
+                <label for="name"><span class="bold-label">Name</span></label>
+                <br><input type="text" id="edit-name" value="">
             </div>
-            <div class="cancel-profile-button" id="edit-cancel">
-                <button type="button"  onclick="toggleEditProfile()">Cancel</button>
+
+            <div class="input">
+                <label for="tag"><span class="bold-label">Username</span></label>
+                <br><input type="text" id="edit-tag" value="">
+            </div>
+
+            <div class="input">
+                <label for="bio"><span class="bold-label">Bio</span></label>
+                <br><textarea id="edit-bio" value=""></textarea>
+            </div>
+
+            <div class="input"> 
+                <label for="edit-profile-picture" class="custom-button">Upload</label>
+                <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
+            </div>
+
+            <div class="save-cancel-profile-button" id="edit-submit">
+                <button type="submit" name="submit">Save Profile</button>
+                <button type="button" onclick="toggleEditProfile()">Cancel</button>
             </div>
         </form>
     </div>

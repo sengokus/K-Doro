@@ -186,8 +186,8 @@ hr {
 .edit-profile-container {
     position: block;
     margin: 0.8em 0.1em;
-  }
-  
+}
+
 .edit-profile-button {
     padding: 0.5em 0.7em;
     font-size: 0.9em;
@@ -200,5 +200,70 @@ hr {
     transition: 0.3s all ease;
 }
 .edit-profile-button:hover {
+    background-color:rgb(87, 113, 160);
+}
+
+.edit-container {
+    font-family: 'Public', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2em;
+    display: grid;
+    place-items: center;
+}
+
+.edit-container input, .edit-container textarea {
+    min-width: 16em;
+    min-height: 2em;
+    max-width: 16em;
+    max-height: 9em;
+    font-family: 'Public', sans-serif;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.7em;
+    /* margin-left: 2em; */
+}
+
+label[for="edit-profile-picture"] {
+    background-color: rgb(142, 166, 212);
+    color:rgb(236, 239, 244);
+    padding: 0.7em 2em;
+    border-radius: 0.6em;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+label[for="edit-profile-picture"]:hover {
+    background-color: rgb(87, 113, 160);
+}
+
+#edit-profile-picture {
+    width: 0.01em;
+    height: 0.01em;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+#edit-submit button {
+    font-family: 'Public', sans-serif;
+    font-weight: bold;
+    color:rgb(236, 239, 244);
+    background: none;
+    background-color: rgb(142, 166, 212);
+    border: none;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+#edit-submit button:hover {
     background-color:rgb(87, 113, 160);
 }
