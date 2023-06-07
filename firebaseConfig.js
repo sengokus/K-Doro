@@ -19,3 +19,7 @@ export function initFirebase() {
 export function initDb(app) {
   return getFirestore(app);
 }
+
+// export function authUser(){
+//   return getAuth();
+// }

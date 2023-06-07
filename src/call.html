@@ -18,11 +18,22 @@
     <script src="./scripts/login.js"></script> 
 </head>
 <body>
-    <div id="timer-container">
-        <span id="timer">25:00</span>
-        <div id="button-container">
-            <button id="start-btn" class="timer-btn">Start</button>
-            <button id="break-btn" class="timer-btn">Break</button>
+    <!-- preload alarm sfx -->
+    <audio id="alarm-sfx" src="../resources/sfx/alarm.wav" preload="auto"></audio>
+
+    <div class="pomodoro">
+        <div id="timer-container">
+            <div id="timer">
+                <button id="minus-five"><ion-icon name="caret-back-outline" class="arrow" onclick="subtractTime()"></ion-icon></button>
+                <span id="minutes"></span>
+                <span>:</span>
+                <span id="seconds"></span>
+               <button id="add-five"><ion-icon name="caret-forward-outline" class="arrow" onclick="addTime()"></ion-icon></button>
+            </div>
+            <div id="button-container">
+                <button id="start-btn" class="timer-btn" onclick="start()">Start</button>
+                <button id="break-btn" class="timer-btn" onclick="breakTime()">Break</button>
+            </div>
         </div>
     </div>
     
@@ -33,7 +44,7 @@
     <div class="video-container">
         <div style="width: 100%; height: 100vh; float: none; clear: both;">
             <iframe 
-                src="https://www.youtube.com/embed/v6_o9vTPwck?autoplay=1&controls=0&showinfo=0&rel=0" 
+                src="https://www.youtube.com/embed/0xdB_vo4r2c?autoplay=1&controls=0&showinfo=0&rel=0" 
                 width="100%" height="100%" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media; picture-in-picture" 
@@ -46,6 +57,7 @@
         <a href="end.html" id="leave-meet">Leave Meeting</a>
     </div>
 
+    <script type="module" src="./scripts/pomodoro.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

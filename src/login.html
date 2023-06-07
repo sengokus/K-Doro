@@ -18,7 +18,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
 
-        <script src="./scripts/login.js"></script> 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     </head>
 
@@ -58,12 +57,13 @@
                         <label id="login-page-label">Login</label>
                         <form class="form active" id="login">
                             <div class="input">
-                                <label for="login" id="username-label" >Username</label>
+                                <label for="login" id="username-label" >Email</label>
+
                                 <span class="login-icon" id="user-icon">
                                     <ion-icon name="people-outline"></ion-icon>
                                 </span>
 
-                                <input type="username" name="username" placeholder="Enter username" required>
+                                <input type="email" name="email" id="email-login" placeholder="Enter email" required>
                             </div>
 
                             <div class="input">
@@ -72,7 +72,7 @@
                                     <ion-icon name="lock-closed-outline"></ion-icon>
                                 </span>
 
-                                <input type="password" name="password" placeholder="Enter password" required>
+                                <input type="password" name="password" id="password-login" placeholder="Enter password" required>
                             </div>
 
                             <div class="remember-box">
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="submit-button" id="login-submit">
-                                <button id="login-button" onclick="window.location.href='./profile.html'">Log In</button>
+                                <button id="login-button" name="submit" >Log In</button>
                             </div>                        
                         </form>
 
@@ -98,7 +98,7 @@
     <script type="text/javascript" src="../src/scripts/loader.js"></script> 
     <!-- Script -->
     <script src="../src/scripts/randomizer.js"></script>
-
+    <script type="module" src="../src/scripts/login.js"></script>
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

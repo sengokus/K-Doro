@@ -6,12 +6,13 @@
 
 #timer-container {
 	display: inline-flex;
-	align-items: center;
 	position: absolute;
+	align-items: center;
 	margin: 3em;
 	background-color: rgba(255, 255, 255, 0.5);
 	padding: 0.8em 1.2em;
 	border-radius: 0.6em;
+	background-color: rgba(200, 123, 123, 0.5);
 }
 
 /* #button-container {
@@ -19,11 +20,17 @@
 } */
 
 #timer {
+	display: inline;
 	color: #4d2aa5;
 	font-weight: bold;
 	font-size: 2em;
 	margin-right: 10px;
 	font-family: 'Sen', sans-serif;
+}
+
+.arrow {
+	transform: translateY(0.2em);
+	cursor: pointer;
 }
 
 .leave-meeting {
@@ -70,10 +77,37 @@
 #start-btn {
 	background-color: #4d2aa5;
 	color: rgb(236, 239, 244);
+	transition: 0.3s all ease;
+}
+
+#start-btn:disabled {
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: not-allowed;
+	color: #4d2aa5;
 }
 
 #break-btn {
 	background-color: rgba(255, 255, 255, 0.5);
+	transition: 0.3s all ease;
+}
+
+#break-btn:disabled {
+	background-color: #4d2aa5;
+	color: rgb(236, 239, 244);
+	cursor: not-allowed;
+}
+
+#add-five, #minus-five {
+	background: none;
+	outline: none;
+	border: none;
+	transform: translateY(-0.4em);
+	color:#4d2aa5;
+	transition: 0.3s all ease;
+}
+
+#add-five:disabled, #minus-five:disabled {
+	color: rgb(236, 239, 244);
 }
 
 .timer-btn {
@@ -87,7 +121,7 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.timer-btn.active {
+.timer-btn:active {
 	background-color: #4d2aa5;
 	color: #fff;
 }
