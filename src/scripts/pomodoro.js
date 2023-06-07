@@ -87,7 +87,6 @@ function breakTime() {
     console.log("Taking a break...");
 
     disableButtons();
-    pauseVideo();
 
     minutes.textContent = "00"; // edit later
     seconds.textContent = "05";
@@ -137,5 +136,3 @@ function subtractTime() {
         minutes.textContent = 25;
     }
 }
-
-// TODO: alarm
