@@ -205,10 +205,6 @@ ion-icon {
     margin: -0.1em -0.4em;
 } */
 
-.input input[type="password"] {
-    letter-spacing: 0.175em;
-}
-
 .input input[type="username"], .input input[type="password"], .input input[type="email"] {
     font-family: 'Public Sans', sans-serif;
 }
