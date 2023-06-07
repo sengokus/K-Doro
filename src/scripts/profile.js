@@ -15,7 +15,7 @@ const loadProfileData = async () => {
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        console.log("Document data:", userData);
+        console.log("Document data stored:", userData);
 
         // Store user data in session storage
         sessionStorage.setItem("userData", JSON.stringify(userData));
@@ -25,6 +25,11 @@ const loadProfileData = async () => {
         document.getElementById("user-tag").textContent = username;
         document.getElementById("user-bio").textContent = bio;
         document.getElementById("profile-pic").src = profilePicture;
+
+        // Prefill the edit form
+        document.getElementById("edit-name").value = name;
+        document.getElementById("edit-tag").value = username.replace('@', '');
+        document.getElementById("edit-bio").value = bio;
       } else {
         console.log("No such document!");
       }
