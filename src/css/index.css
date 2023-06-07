@@ -193,10 +193,10 @@ ion-icon {
 }
 
 .call-grid-column img {
-    margin-top: 0.5em;
+    margin-top: 1.2em;
     vertical-align: middle;
-    height: 3em;
-    width: 4.6em;
+    height: 4.2em;
+    width: 6em;
     object-fit: cover;
     border-radius: 0.2em;
     transition: 0.3s all ease;
