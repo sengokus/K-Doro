@@ -19,11 +19,15 @@ minusBtn.addEventListener("click", subtractTime);
 function disableButtons() {
     startBtn.disabled = true;
     stopBtn.disabled = true;
+    addBtn.disabled = true;
+    minusBtn.disabled = true;
 }
 
 function enableButtons() {
     startBtn.disabled = false;
     stopBtn.disabled = false;
+    addBtn.disabled = false;
+    minusBtn.disabled = false;
 }
 
 function padZero(value) {
@@ -36,8 +40,9 @@ function start() {
 
     disableButtons();
 
-    minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
-    seconds.textContent = "59";
+    // minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
+    minutes.textContent = "00" // edit later
+    seconds.textContent = "02";
 
     // set interval to 1 second
     const interval = setInterval(() => {
@@ -48,8 +53,15 @@ function start() {
             seconds.textContent = "59";
         } else if (minutes.textContent === "00" && seconds.textContent === "00") {
             console.log("Time for a break...");
+
+            alarmSFX.play();
+            let doneMessage = confirm("Time for a break!");
+            
+            if (doneMessage) {
+                alarmSFX.pause();
+                breakTime();
+            }
             clearInterval(interval);
-            breakTime();
         } else {
             clearInterval(interval);
         }
@@ -61,8 +73,8 @@ function breakTime() {
 
     disableButtons();
 
-    minutes.textContent = "04";
-    seconds.textContent = "59";
+    minutes.textContent = "00"; // edit later
+    seconds.textContent = "02";
 
     // set interval to 1 second
     const interval = setInterval(() => {
@@ -73,10 +85,18 @@ function breakTime() {
             seconds.textContent = "59";
         } else if (minutes.textContent === "00" && seconds.textContent === "00") {
             console.log("Time to get back to work...");
+
+            alarmSFX.play();
+            let doneMessage = confirm("Time to get back to work!");
+            
+            if (doneMessage) {
+                alarmSFX.pause();
+                breakTime();
+            }
             minutes.textContent = 25;
             seconds.textContent = "00";
-            enableButtons();
             clearInterval(interval);
+            enableButtons();
         } else {
             clearInterval(interval);
         }
@@ -103,4 +123,4 @@ function subtractTime() {
     }
 }
 
-// TODO: disallow adding or subtracting time if timer is running
+// TODO: alarm

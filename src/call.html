@@ -24,11 +24,11 @@
     <div class="pomodoro">
         <div id="timer-container">
             <div id="timer">
-                <ion-icon name="caret-back-outline" class="arrow" id="minus-five" onclick="subtractTime()"></ion-icon>
+                <button id="minus-five"><ion-icon name="caret-back-outline" class="arrow" onclick="subtractTime()"></ion-icon></button>
                 <span id="minutes"></span>
                 <span>:</span>
                 <span id="seconds"></span>
-                <ion-icon name="caret-forward-outline" class="arrow" id="add-five" onclick="addTime()"></ion-icon>
+               <button id="add-five"><ion-icon name="caret-forward-outline" class="arrow" onclick="addTime()"></ion-icon></button>
             </div>
             <div id="button-container">
                 <button id="start-btn" class="timer-btn" onclick="start()">Start</button>

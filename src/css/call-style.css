@@ -97,6 +97,19 @@
 	cursor: not-allowed;
 }
 
+#add-five, #minus-five {
+	background: none;
+	outline: none;
+	border: none;
+	transform: translateY(-0.4em);
+	color:#4d2aa5;
+	transition: 0.3s all ease;
+}
+
+#add-five:disabled, #minus-five:disabled {
+	color: rgb(236, 239, 244);
+}
+
 .timer-btn {
 	font-family: 'Sen', sans-serif;
 	font-weight: bold;
