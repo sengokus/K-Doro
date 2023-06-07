@@ -3,8 +3,6 @@ import { db } from "../../index.js";
 import { collection, doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js';
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 
-
-
 // Get the registration form
 const registerForm = document.getElementById("register");
 const auth = getAuth();
@@ -92,4 +90,3 @@ logout.addEventListener('click', e =>{
   //     } catch (e) {
   //       alert(e);
   //     }
-  

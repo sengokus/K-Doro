@@ -22,9 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
 </head>
 <body onload="updateLoginButton()">
-    
     <!-- Temp banner, might be changed or deleted -->
     <img src="../resources/img/aespa_girls.jpg" id="banner">
         
@@ -81,13 +81,9 @@
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
                 <button type="button"  onclick="toggleEditProfile()">Cancel</button>
-
             </div>
         </form>
-
     </div>
-    
-    
     <hr>
     <h2 id="fav-text">Favorites</h2>
     <div class="fav-container">
@@ -100,7 +96,6 @@
         <span class = "loader"><span class="loader-inner"></span></span>
     </div>
 
-
     <script type="module">
         import { loadProfileData } from "../src/scripts/profile.js";
         loadProfileData();
@@ -110,8 +105,6 @@
     <script type="module" src="../src/scripts/edit-profile.js"></script>
     <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
     <script type="module" src="../src/scripts/logout.js"></script>
-
-    
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
