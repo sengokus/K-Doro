@@ -16,6 +16,21 @@ stopBtn.addEventListener("click", breakTime);
 addBtn.addEventListener("click", addTime);
 minusBtn.addEventListener("click", subtractTime);
 
+// var protocol = location.protocol;
+// var url = protocol + "//youtube.com";
+// var iframe = document.querySelector("iframe");
+// var win = iframe.contentWindow;
+// console.log('URL: ', url);
+// console.log('win: ', win);
+
+// function playVideo() {
+//     window.postMessage("playVideo", url);
+// }
+
+// function pauseVideo() {
+//     window.postMessage("pauseVideo", url);
+// }
+
 function disableButtons() {
     startBtn.disabled = true;
     stopBtn.disabled = true;
@@ -42,7 +57,7 @@ function start() {
 
     // minutes.textContent = padZero(parseInt(minutes.textContent) - 1);
     minutes.textContent = "00" // edit later
-    seconds.textContent = "02";
+    seconds.textContent = "05";
 
     // set interval to 1 second
     const interval = setInterval(() => {
@@ -72,9 +87,10 @@ function breakTime() {
     console.log("Taking a break...");
 
     disableButtons();
+    pauseVideo();
 
     minutes.textContent = "00"; // edit later
-    seconds.textContent = "02";
+    seconds.textContent = "05";
 
     // set interval to 1 second
     const interval = setInterval(() => {
