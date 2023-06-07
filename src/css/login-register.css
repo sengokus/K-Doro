@@ -41,16 +41,6 @@ ion-icon {
     font-size: 1.3em;
 }
 
-
-#logo {
-    position: absolute;
-    display: flex;
-    justify-content: left;
-    left: 3em;
-    top: 0.6em;
-    height: 8.7em;
-}
-
 /* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
@@ -216,7 +206,7 @@ ion-icon {
 } */
 
 .input input[type="password"] {
-    /* letter-spacing: 0.175em; */
+    letter-spacing: 0.175em;
 }
 
 .input input[type="username"], .input input[type="password"], .input input[type="email"] {
