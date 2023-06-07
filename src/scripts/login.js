@@ -1,66 +1,53 @@
 import { addDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js';
 import { db } from "../../index.js";
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js';
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
 
 const auth = getAuth();
 
-auth.onAuthStateChanged(async user => {
-    console.log("tangina")
-    console.log(user)
-    console.log("pota")
-    console.log(user.uid)
-    console.log("ahay")
-    // if (user){
-    //     console.log("user logged in successfully", user);
-    //     db.collection('users').onSnapshot(snapshot =>{
-    //         username(snapshot.docs);
-    //         setupUI(user);
-    //     }).catch(err=>{
-    //         console.log(err.message)
-    //     });
-        
-    // }else{
-    //     setupUI();
-    //     console.log("yudi-")
-    //     console.log("user logged out");
-    // }
+// // Set persistence to local
+// setPersistence(auth, browserLocalPersistence)
+//   .then(() => {
+//     // Continue with your auth state change listener and other code
+//     auth.onAuthStateChanged(async (user) => {
+//       // Rest of your code here
+//     });
+//   })
+//   .catch((error) => {
+//     // Handle the error
+//     console.error("Error setting persistence:", error);
+//   });
+  
+// auth.onAuthStateChanged(async (user) => {
+//     console.log("tangina")
+//     console.log(user)
+//     console.log("pota")
+//     console.log(user.uid)
+//     console.log("ahay")
 
-        // Get data
-    const docRef = doc(db, "users", user.uid);
-    const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {
-    const userData = docSnap.data();
-    console.log("Document data 444:", userData);
+//         // Get data
+//     const docRef = doc(db, "users", user.uid);
+//     const docSnap = await getDoc(docRef);
 
-    // Assign values to variables
-    const { username, bio, name} = userData;
+//     if (docSnap.exists()) {
+//     const userData = docSnap.data();
+//     console.log("Document data:", userData);
 
-    // Set values in HTML elements
-    document.getElementById("user-name").innerHTML = name;
-    document.getElementById("user-tag").innerHTML = username;
-    document.getElementById("user-bio").innerHTML = bio;
+//     // Assign values to variables
+//     const { username, bio, name, profilePicture} = userData;
+//     const img = document.getElementById("profile-pic");
 
-    } else {
-    console.log("No such document!");
-    }
+//     // Set values in HTML elements
+//     document.getElementById("user-name").innerHTML = name;
+//     document.getElementById("user-tag").innerHTML = username;
+//     document.getElementById("user-bio").innerHTML = bio;
+//     img.setAttribute('src', profilePicture);
 
-    // //get data
-    // const docRef = doc(db, "users", user.uid);
-    // const docSnap = await getDoc(docRef);
-
-    // if (docSnap.exists()) {
-    // console.log("Document data:", docSnap.data());
-    // } else {
-    // // docSnap.data() will be undefined in this case
-    // console.log("No such document!");
-    // }
-    //     document.getElementById("user-name").innerHTML = username;
-    //     document.getElementById("user-tag").innerHTML = username;
-    //     document.getElementById("user-bio").innerHTML = bio;
-
-});
+//     } else {
+//     console.log("No such document!");
+//     }
+// });
 
 
 
@@ -79,16 +66,27 @@ loginForm.addEventListener("submit", (event) => {
     console.log(`Signing user: ${email}, ${password}`);
     //registerUser(email,username,password1, password2);
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
+    .then(async (userCredential) => {
+        // Signed in successfully
         alert("naks sakto");
-        console.log(userCredential.user)
-        window.location.href = "profile.html";
-        
-        // ...
+        console.log(userCredential.user);
+
+        // Retrieve user data from Firestore
+        const docRef = doc(db, "users", userCredential.user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const userData = docSnap.data();
+            console.log("Document data:", userData);
+
+            /// Store the user's UID in local storage
+            localStorage.setItem("uid", userCredential.user.uid);
+
+            // Redirect to profile.html
+            window.location.href = "profile.html";
+        } else {
+            console.log("No such document!");
+        }
     })
     .catch(error => alert(error.message));
-  
-  });
-
-
+});

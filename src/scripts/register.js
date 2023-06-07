@@ -38,7 +38,8 @@ registerForm.addEventListener("submit", (event) => {
       await setDoc(doc(db, "users", userId),{
         name: username,
         username: "@" + username,
-        bio:"Edit bio."
+        bio:"Edit bio.",
+        profilePicture:"https://firebasestorage.googleapis.com/v0/b/kdoro-f0528.appspot.com/o/profile-pictures%2Fdefault-profile.png?alt=media&token=45b2ff73-7964-4c24-aed2-04473d5758b1",
       });
 
     })
@@ -52,12 +53,13 @@ registerForm.addEventListener("submit", (event) => {
     }
 });
 
+// Get the logout button
 const logout = document.querySelector("logout-button");
+// Add event listener for logout button
 logout.addEventListener('click', e =>{
   e.preventDefault();
-  auth.signOut.then(() => {
+  auth.signOut.then(() => { //sign out the user
     console.log("user signed out");
-
   })
 })
 

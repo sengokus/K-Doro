@@ -5,38 +5,27 @@ import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.0.1/fireb
 
 const auth = getAuth();
 
-
 auth.onAuthStateChanged(user => {
-    console.log(user)
-})
+  console.log(user);
+});
 
-const home = document.querySelector("#home-button");
 const logout = document.querySelector("#logout-button");
-logout.addEventListener('click', e =>{
+
+logout.addEventListener('click', e => {
   e.preventDefault();
   signOut(auth).then(() => {
     console.log("user signed out");
-    window.location.href = "login.html";
-
+    // Clear localStorage and sessionStorage
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = "../../index.html";
   }).catch((error) => {
     // An error happened.
     alert("yut");
   });
-})
+});
 
 
-
-home.addEventListener('click', e =>{
-  e.preventDefault();
-  signOut(auth).then(() => {
-    console.log("go to home page");
-    window.location.href = "home.html";
-
-  }).catch((error) => {
-    // An error happened.
-    alert("yut");
-  });
-})
 
   // export async function registerUser(email, username, password1, password2){
 

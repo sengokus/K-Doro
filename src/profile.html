@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../src/css/loader-style.css">
     <link rel="stylesheet" href="../src/css/banner-style.css">
 
+    <script type="module" src="../src/scripts/nav-bar.js"></script> 
+    <script type="module" src="../src/scripts/profile.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
@@ -19,9 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script type="module" src="../src/scripts/login.js"></script>
 </head>
-<body>
+<body onload="updateLoginButton()">
+    
     <!-- Temp banner, might be changed or deleted -->
     <img src="../resources/img/aespa_girls.jpg" id="banner">
         
@@ -40,19 +43,21 @@
             <li>
                 <span class="back-icon">
                     <ion-icon name="home-outline"></ion-icon>
-                    <a class="home-label" id ="home-button">Home</a>
+                    <a class="home-label" href="home.html" id ="home-button">Home</a>
                 </span>
             </li>
         </ul>
     </nav>
     <div class="info-container">
-        <img src="../resources/img/giselle-1.jpg" id="profile-pic">
+        <img src="" id="profile-pic" alt="Profile Picture">
+
+
         <div id="user-info">
             <span id="user-name"><h1>""</h1></span>
             <span id="user-tag"><h3>""</h3></span>
             <span id="user-bio"><p>"".</p></span>
             <div class="edit-profile-container">
-                <button class="edit-profile-button" onclick="toggleEditProfile()">Edit Profile</button>
+                <button class="edit-profile-button" onclick="toggleEditProfile()" id="edit-button">Edit Profile</button>
             </div>
         </div>
     </div>
@@ -61,19 +66,21 @@
     <div class="edit-container" id= edit-profile-data style="display:none;">
         <form id = "edit-profile-form">
             <label for="name"><span class="bold-label">Name:</span></label>
-            <input type="text" id="edit-name" >
+            <input type="text" id="edit-name" value="">
 
             <label for="tag"><span class="bold-label">Username:</span></label>
-            <input type="text" id="edit-tag">
+            <input type="text" id="edit-tag" value="">
 
             <label for="bio"><span class="bold-label">Bio:</span></label>
-            <textarea id="edit-bio"></textarea>
+            <textarea id="edit-bio" value=""></textarea>
+
+            <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
 
             <div class="save-profile-button" id="edit-submit">
                 <button type="submit" name="submit">Save Profile</button>
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
-                <button type="button"   onclick="toggleEditProfile()">Cancel</button>
+                <button type="button"  onclick="toggleEditProfile()">Cancel</button>
 
             </div>
         </form>
@@ -92,10 +99,18 @@
     <div class = "loader-wrapper">
         <span class = "loader"><span class="loader-inner"></span></span>
     </div>
+
+
+    <script type="module">
+        import { loadProfileData } from "../src/scripts/profile.js";
+        loadProfileData();
+    </script>
+
     <script type="text/javascript" src="../src/scripts/loader.js"></script> 
     <script type="module" src="../src/scripts/edit-profile.js"></script>
     <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
     <script type="module" src="../src/scripts/logout.js"></script>
+
     
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
