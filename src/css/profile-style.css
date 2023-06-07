@@ -226,13 +226,111 @@ hr {
   }
   
   .artist-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    width: 10%;
+    height: 10%;
   }
   
   .artist-name {
     margin-top: 10px;
     text-align: center;
+  }
+  
+  .artist:hover .remove-overlay {
+    display: block;
+  }
+  
+  .favorite-image {
+    width: 10%;
+    height: 10%;
+  }
+  
+  /* Styles for artist containers */
+  .artist-container {
+    display: inline-block;
+    width: 25%; /* Adjust this value to control the width of each container */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .artist-image {
+    width: 50%;
+    height: auto;
+  }
+  
+  .artist-name {
+    text-align: center;
+  }
+  
+  /* Styles for favorite elements */
+  .fav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* Adjust this value to control the width of each favorite */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .fav-image {
+    width: 80%;
+    height: auto;
+  }
+  
+  .remove-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Styles for artist and favorite rows */
+  .row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust this value to control the spacing between rows */
+  }
+  
+  .save-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-fav-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .add-fav-image:hover {
+    opacity: 0.7;
+  }
+  
+  /* Additional styles */
+  .no-favorites-message {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .change-favorites-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #000000;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
