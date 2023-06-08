@@ -44,7 +44,8 @@ registerForm.addEventListener("submit", (event) => {
       
     .then(() => {
       // Redirect to the desired page after successful registration
-      window.location.href = "profile.html";
+      window.alert("Registration successful!");
+      window.location.href = "login.html";
     })
       .catch(error => alert(error.message));
     } catch (e) {
