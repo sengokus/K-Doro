@@ -198,7 +198,6 @@ function createArtistElement(artist, overlay) {
 
   const artistName = document.createElement("span");
   artistName.classList.add("artist-name");
-  artistName.textContent = artist.name;
 
   // Disable selection if the artist is already a favorite
   if (isArtistInFavorites(artist)) {

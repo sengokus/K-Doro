@@ -5,53 +5,6 @@ import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersis
 
 const auth = getAuth();
 
-// // Set persistence to local
-// setPersistence(auth, browserLocalPersistence)
-//   .then(() => {
-//     // Continue with your auth state change listener and other code
-//     auth.onAuthStateChanged(async (user) => {
-//       // Rest of your code here
-//     });
-//   })
-//   .catch((error) => {
-//     // Handle the error
-//     console.error("Error setting persistence:", error);
-//   });
-  
-// auth.onAuthStateChanged(async (user) => {
-//     console.log("tangina")
-//     console.log(user)
-//     console.log("pota")
-//     console.log(user.uid)
-//     console.log("ahay")
-
-
-//         // Get data
-//     const docRef = doc(db, "users", user.uid);
-//     const docSnap = await getDoc(docRef);
-
-//     if (docSnap.exists()) {
-//     const userData = docSnap.data();
-//     console.log("Document data:", userData);
-
-//     // Assign values to variables
-//     const { username, bio, name, profilePicture} = userData;
-//     const img = document.getElementById("profile-pic");
-
-//     // Set values in HTML elements
-//     document.getElementById("user-name").innerHTML = name;
-//     document.getElementById("user-tag").innerHTML = username;
-//     document.getElementById("user-bio").innerHTML = bio;
-//     img.setAttribute('src', profilePicture);
-
-//     } else {
-//     console.log("No such document!");
-//     }
-// });
-
-
-
-
 const loginForm = document.getElementById("login");
 
 
@@ -68,7 +21,7 @@ loginForm.addEventListener("submit", (event) => {
     signInWithEmailAndPassword(auth, email, password)
     .then(async (userCredential) => {
         // Signed in successfully
-        alert("naks sakto");
+        alert("Login successful!");
         console.log(userCredential.user);
 
         // Retrieve user data from Firestore

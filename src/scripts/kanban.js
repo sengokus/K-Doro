@@ -123,18 +123,151 @@ fetchTasksFromFirestore(uid);
 
 // Function to create a task element
 const createTaskElement = (taskId, content) => {
-  const taskElement = document.createElement("div");
-  taskElement.classList.add("task");
-  taskElement.textContent = content;
-  taskElement.setAttribute("draggable", "true"); // Add draggable attribute
-  taskElement.setAttribute("id", taskId); // Set unique ID for the task
+    const taskElement = document.createElement("div");
+    taskElement.classList.add("task");
+    taskElement.textContent = content;
+    taskElement.setAttribute("draggable", "true"); // Add draggable attribute
+    taskElement.setAttribute("id", taskId); // Set unique ID for the task
+  
+    // Add event listeners for drag events
+    taskElement.addEventListener("dragstart", handleTaskDragStart);
+    taskElement.addEventListener("dragend", handleTaskDragEnd);
+  
+    // Add event listener for task click event
+    taskElement.addEventListener("click", () => {
+      openEditModal(taskId, content);
+    });
+  
+    return taskElement;
+  };
+  
+// Open the edit modal
+const openEditModal = (taskId, content) => {
+    // Get the modal element
+    const modal = document.getElementById("editModal");
+  
+    // Get the task input field in the modal
+    const input = modal.querySelector("#editTaskInput");
+  
+    // Set the task content as the input field value
+    input.value = content;
+  
+    // Save the original content and task ID as data attributes on the modal
+    modal.dataset.taskId = taskId;
+    modal.dataset.originalContent = content;
+    const originalContent = modal.dataset.originalContent;
+  
+  
+    // Show the modal
+    modal.classList.add("show");
+  
+    // Add event listener to the modal form for submitting the edited task
+    const form = modal.querySelector("form");
+    form.addEventListener("submit", handleEditTaskSubmission);
+  
+    // Add event listener to the delete task button
+    const deleteButton = modal.querySelector("#deleteTaskButton");
+    deleteButton.addEventListener("click", () => {
+      deleteTask(uid, taskId, originalContent);
+      modal.classList.remove("show");
+    });
+  };
+const deleteTask = async (uid, taskId, originalContent) => {
+  try {
+    const docRef = doc(db, "tasks", uid);
+    const docSnapshot = await getDoc(docRef);
 
-  // Add event listeners for drag events
-  taskElement.addEventListener("dragstart", handleTaskDragStart);
-  taskElement.addEventListener("dragend", handleTaskDragEnd);
+    if (docSnapshot.exists()) {
+      const tasks = docSnapshot.data().tasks;
 
-  return taskElement;
+      // Find the task in the tasks object and remove it
+      for (const [column, taskList] of Object.entries(tasks)) {
+        const taskIndex = taskList.indexOf(originalContent);
+        if (taskIndex !== -1) {
+          tasks[column].splice(taskIndex, 1);
+          break;
+        }
+      }
+
+      // Remove the task element from the DOM
+      const taskElement = document.getElementById(taskId);
+      if (taskElement) {
+        taskElement.remove();
+      }
+
+      // Update the tasks in Firestore
+      await setDoc(docRef, { tasks });
+
+      console.log("Task deleted from Firestore successfully!");
+    } else {
+      console.log("No tasks found for the user in Firestore.");
+    }
+  } catch (error) {
+    console.error("Error deleting task from Firestore:", error);
+  }
 };
+
+  
+  // Function to handle the edit task submission
+  const handleEditTaskSubmission = (event) => {
+    event.preventDefault();
+  
+    // Get the modal element
+    const modal = document.getElementById("editModal");
+  
+    // Get the task input field in the modal
+    const input = modal.querySelector("#editTaskInput");
+  
+    // Get the task ID and original content from the modal data attributes
+    const taskId = modal.dataset.taskId;
+    const originalContent = modal.dataset.originalContent;
+  
+    // Get the updated task content from the input field
+    const updatedContent = input.value.trim();
+  
+    if (updatedContent !== "") {
+      // Update the task content in the UI
+      const taskElement = document.getElementById(taskId);
+      taskElement.textContent = updatedContent;
+  
+      // Update the task content in Firestore
+      updateTaskContentInFirestore(uid, taskId, updatedContent, originalContent);
+  
+      // Close the modal
+      modal.classList.remove("show");
+    }
+  };
+  
+  // Function to update task content in Firestore
+  const updateTaskContentInFirestore = async (uid, taskId, updatedContent, originalContent) => {
+    try {
+      const docRef = doc(db, "tasks", uid);
+      const docSnapshot = await getDoc(docRef);
+  
+      if (docSnapshot.exists()) {
+        const tasks = docSnapshot.data().tasks;
+  
+        // Find the task in the tasks object and update its content
+        for (const [column, taskList] of Object.entries(tasks)) {
+          const taskIndex = taskList.indexOf(originalContent);
+          if (taskIndex !== -1) {
+            tasks[column][taskIndex] = updatedContent;
+            break;
+          }
+        }
+  
+        // Update the tasks in Firestore
+        await setDoc(docRef, { tasks });
+  
+        console.log("Task content updated in Firestore successfully!");
+      } else {
+        console.log("No tasks found for the user in Firestore.");
+      }
+    } catch (error) {
+      console.error("Error updating task content in Firestore:", error);
+    }
+  };
+  
 
 // Function to handle task drag start event
 const handleTaskDragStart = (event) => {
@@ -208,3 +341,4 @@ columns.forEach((column) => {
     handleTaskDrop(event, column);
   });
 });
+

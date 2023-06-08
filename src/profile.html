@@ -79,7 +79,7 @@
                 <button type="submit" name="submit">Save Profile</button>
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
-                <button type="button" onclick="toggleEditProfile()">Cancel</button>
+                <button type="button" onclick="toggleEditProfile();location.reload()">Cancel</button>
             </div>
         </form>
     </div>
@@ -125,6 +125,18 @@
             </form>
         </div>
     </div>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form>
+              <input type="text" id="editTaskInput" placeholder="Task content" required>
+              <button type="submit">Save</button>
+              <button type="button" id="deleteTaskButton">Delete</button>
+            </form>
+          </div>
+          
+      
+    
 
 
     <div class="loader-wrapper">
@@ -136,9 +148,8 @@
         loadProfileData();
     </script>
 
-    <script src="https://code.ionicframework.com/ionicons/2.0.1/js/ionicons.min.js"></script>
     <script type="text/javascript" src="../src/scripts/loader.js"></script> 
-    <script type="module" src="../src/scripts/kanban.js"></script>
+    <script type="module" src="../src/scripts/kanban.js"></script>   
     <script type="module" src="../src/scripts/edit-profile.js"></script>
     <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
     <script type="module" src="../src/scripts/logout.js"></script>
