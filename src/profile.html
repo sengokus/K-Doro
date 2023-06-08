@@ -151,6 +151,37 @@
             <span class="loader"><span class="loader-inner"></span></span>
         </div>
 
+        <div class="column" id="finish-column">
+            <h3>Finished</h3>
+            <div class="task-container">
+                <!-- Tasks in the "Finish" column will be dynamically added here -->
+            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form>
+              <input type="text" id="editTaskInput" placeholder="Edit task"required>
+              <button type="submit">Save</button>
+              <button type="button" id="deleteTaskButton">Delete</button>
+              <button type="button" id="cancelButton">Cancel</button>
+            </form>
+          </div>
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script type="module">
+        import { loadProfileData } from "../src/scripts/profile.js";
+        loadProfileData();
+    </script>
+
         <script type="module">
             import { loadProfileData } from "../src/scripts/profile.js";
             loadProfileData();
@@ -165,4 +196,3 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
- 

@@ -26,14 +26,10 @@ function getSelectedArtist() {
 function populateArtistSelection() {
     const editFavoritesButton = document.getElementById("edit-favorites-button");
 
-    const overlay1 = document.createElement("div");
-    overlay1.classList.add("overlay", "overlay1");
-    document.body.appendChild(overlay1);
-    
-    const overlay2 = document.createElement("div");
-    overlay2.classList.add("overlay", "overlay2");
-    document.body.appendChild(overlay2);
-  
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay", "overlay");
+    document.body.appendChild(overlay);
+
     // Variable to track whether the "Change Favorites" button was clicked
     let isChangeFavoritesClicked = false;
   
@@ -50,8 +46,8 @@ function populateArtistSelection() {
     });
 
     editFavoritesButton.addEventListener("click", () => {
-      overlay1.innerHTML = "";
-      overlay1.style.display = "block";
+      overlay.innerHTML = "";
+      overlay.style.display = "block";
   
       // Create a button to allow changing favorites
       const changeFavoritesButton = document.createElement("button");
@@ -59,47 +55,43 @@ function populateArtistSelection() {
       changeFavoritesButton.classList.add("change-favorites-button");
 
       console.log("first");
-      overlay1.appendChild(saveButton);
+      overlay.appendChild(saveButton);
   
       changeFavoritesButton.addEventListener("click", () => {
         // Set the variable to true when the "Change Favorites" button is clicked
         console.log("yes. Change Favorites button clicked");
         isChangeFavoritesClicked = true;
         // Clear the favorites array and repopulate the artist selection
-        overlay1.innerHTML = "";
+        overlay.innerHTML = "";
   
         artists.forEach((artist) => {
           // Check if the artist is not already in the favorites
           if (!isArtistInFavorites(artist)) {
-            const artistContainer = createArtistContainer(artist, overlay1);
-            overlay1.appendChild(artistContainer);
+            const artistContainer = createArtistContainer(artist, overlay);
+            overlay.appendChild(artistContainer);
           }
         });
   
-        overlay1.appendChild(saveButton);
+        overlay.appendChild(saveButton);
       });
   
-      overlay1.appendChild(changeFavoritesButton);
+      overlay.appendChild(changeFavoritesButton);
   
       if (favorites.length > 0) {
         // Loop through each favorite artist and display the image with a remove button
         favorites.forEach((favorite, index) => {
-          const favoriteElement = createFavoriteElement(favorite, index, overlay1);
-          overlay1.appendChild(favoriteElement);
+          const favoriteElement = createFavoriteElement(favorite, index, overlay);
+          overlay.appendChild(favoriteElement);
         });
       } else {
         // No favorites, display a message
         const noFavoritesMessage = document.createElement("p");
         noFavoritesMessage.textContent = "You don't have any favorites yet.";
-        overlay1.appendChild(noFavoritesMessage);
+        overlay.appendChild(noFavoritesMessage);
       }
     });
   
   }
-  
-  
-
-  
   
   // Function to check if an artist is already in the favorites
   function isArtistInFavorites(artist) {
@@ -116,7 +108,6 @@ function populateArtistSelection() {
   
     return artistContainer;
   }
-  
 
   function createFavoriteElement(favorite, index, overlay) {
     const favoriteElement = document.createElement("div");
@@ -225,6 +216,7 @@ function createArtistElement(artist, overlay) {
         artistElement.remove();
       } else {
         console.log("No available favorite slots");
+        alert("No available favorite slots");
       }
     });
   }
@@ -279,15 +271,12 @@ function addFavoriteToSessionStorage(url, artist) {
 }
 
 function removeFavoriteFromSessionStorage(index) {
-  console.log("Before removal:", sessionStorage.getItem("userData"));
   
   const userData = JSON.parse(sessionStorage.getItem("userData"));
   if (userData && userData.favorites && userData.favorites.length > index) {
     userData.favorites.splice(index, 1);
     sessionStorage.setItem("userData", JSON.stringify(userData));
   }
-  
-  console.log("After removal:", sessionStorage.getItem("userData"));
 }
 
 

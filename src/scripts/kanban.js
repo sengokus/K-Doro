@@ -141,37 +141,43 @@ const createTaskElement = (taskId, content) => {
     return taskElement;
   };
   
+
 // Open the edit modal
 const openEditModal = (taskId, content) => {
-    // Get the modal element
-    const modal = document.getElementById("editModal");
-  
-    // Get the task input field in the modal
-    const input = modal.querySelector("#editTaskInput");
-  
-    // Set the task content as the input field value
-    input.value = content;
-  
-    // Save the original content and task ID as data attributes on the modal
-    modal.dataset.taskId = taskId;
-    modal.dataset.originalContent = content;
-    const originalContent = modal.dataset.originalContent;
-  
-  
-    // Show the modal
-    modal.classList.add("show");
-  
-    // Add event listener to the modal form for submitting the edited task
-    const editTask = modal.querySelector("form");
-    editTask.addEventListener("submit", handleEditTaskSubmission);
-  
-    // Add event listener to the delete task button
-    const deleteButton = modal.querySelector("#deleteTaskButton");
-    deleteButton.addEventListener("click", () => {
-      deleteTask(uid, taskId, originalContent);
-      modal.classList.remove("show");
-    });
-  };
+  // Get the modal element
+  const modal = document.getElementById("editModal");
+
+  // Get the task input field in the modal
+  const input = modal.querySelector("#editTaskInput");
+
+  // Set the task content as the input field value
+  input.value = content;
+
+  // Save the original content and task ID as data attributes on the modal
+  modal.dataset.taskId = taskId;
+  modal.dataset.originalContent = content;
+  const originalContent = modal.dataset.originalContent;
+
+  // Show the modal
+  modal.classList.add("show");
+
+  // Add event listener to the modal form for submitting the edited task
+  const editTask = modal.querySelector("form");
+  editTask.addEventListener("submit", handleEditTaskSubmission);
+
+  // Add event listener to the delete task button
+  const deleteButton = modal.querySelector("#deleteTaskButton");
+  deleteButton.addEventListener("click", () => {
+    deleteTask(uid, taskId, originalContent);
+    modal.classList.remove("show");
+  });
+
+  // Add event listener to the cancel button
+  const cancelButton = modal.querySelector("#cancelButton");
+  cancelButton.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+};
 
 
 const deleteTask = async (uid, taskId, originalContent) => {
@@ -201,6 +207,7 @@ const deleteTask = async (uid, taskId, originalContent) => {
       await setDoc(docRef, { tasks });
 
       console.log("Task deleted from Firestore successfully!");
+      alert("Task deleted successfully!")
     } else {
       console.log("No tasks found for the user in Firestore.");
     }
@@ -263,6 +270,7 @@ const deleteTask = async (uid, taskId, originalContent) => {
         await setDoc(docRef, { tasks });
   
         console.log("Task content updated in Firestore successfully!");
+        alert("Task content updated in Firestore successfully!");
       } else {
         console.log("No tasks found for the user in Firestore.");
       }

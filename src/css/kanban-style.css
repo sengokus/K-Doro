@@ -172,3 +172,12 @@ div.task-container {
   .task-form button:hover {
     background-color: rgb(87, 113, 160);
   }
+  #cancelButton{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #020202;
+    color: #b6f4ff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s all ease;
+  }
