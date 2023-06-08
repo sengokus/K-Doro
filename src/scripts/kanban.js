@@ -179,7 +179,7 @@ const openEditModal = (taskId, content) => {
   });
 };
 
-
+//
 const deleteTask = async (uid, taskId, originalContent) => {
   try {
     const docRef = doc(db, "tasks", uid);
