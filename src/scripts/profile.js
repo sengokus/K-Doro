@@ -20,7 +20,7 @@ const loadProfileData = async () => {
 
         // Store user data in session storage
         sessionStorage.setItem("userData", JSON.stringify(userData));
-        console.log("yudipota kag tunga", sessionStorage)
+        console.log("sessionStorage", sessionStorage)
 
         const { username, bio, name, profilePicture } = userData;
         document.getElementById("user-name").textContent = name;

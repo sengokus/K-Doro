@@ -239,6 +239,7 @@ hr {
     color: white;
     font-family: 'Public Sans', sans-serif;
     font-size: 1.5em;
+    overflow: scroll;
   }
   
   .overlay button {
@@ -265,12 +266,15 @@ hr {
   .artist {
     /* margin: 10px; */
     cursor: pointer;
+
   }
   
   .artist-image {
     width: 10%;
     height: 10%;
     border-radius: 0.5em;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   .artist:hover .remove-overlay {
@@ -467,16 +471,18 @@ label[for="edit-profile-picture"]:hover {
 }
 
 
-/* Styles specific to overlay1 */
-.overlay1 {
-  /* Add specific styles for overlay1 */
-  /* For example: */
-  background-color: rgba(255, 0, 0, 0.5);
+img.add-favorite-image{
+    width: 12%;
+    height: auto;
 }
 
-/* Styles specific to overlay2 */
-.overlay2 {
-  /* Add specific styles for overlay2 */
-  /* For example: */
-  background-color: rgba(0, 0, 255, 0.5);
+div.favorite-content{
+    width: 100%;
+    height: auto;
+}
+
+div.artist-container{
+    width: 53%;
+    height: auto;
+    margin-bottom: 0.5em;
 }
