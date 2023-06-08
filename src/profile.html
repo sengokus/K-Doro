@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="../src/css/profile-style.css">
     <link rel="stylesheet" href="../src/css/loader-style.css">
     <link rel="stylesheet" href="../src/css/banner-style.css">
-    <script type="module" src="../src/scripts/editFav.js"></script>
+    <link rel="stylesheet" href="../src/css/kanban-style.css"> <!-- Added Kanban Board CSS -->
 
+    <script type="module" src="../src/scripts/editFav.js"></script>
     <script type="module" src="../src/scripts/nav-bar.js"></script> 
     <script type="module" src="../src/scripts/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +23,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 
 </head>
 <body onload="updateLoginButton()">
@@ -52,7 +52,6 @@
     <div class="info-container">
         <img src="" id="profile-pic" alt="Profile Picture">
 
-
         <div id="user-info">
             <span id="user-name"><h1>""</h1></span>
             <span id="user-tag"><h3>""</h3></span>
@@ -63,9 +62,8 @@
         </div>
     </div>
     
-    
     <div class="edit-container" id= edit-profile-data style="display:none;">
-        <form id = "edit-profile-form">
+        <form id="edit-profile-form">
             <label for="name"><span class="bold-label">Name:</span></label>
             <input type="text" id="edit-name" value="">
 
@@ -81,7 +79,7 @@
                 <button type="submit" name="submit">Save Profile</button>
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
-                <button type="button"  onclick="toggleEditProfile()">Cancel</button>
+                <button type="button" onclick="toggleEditProfile()">Cancel</button>
             </div>
         </form>
     </div>
@@ -93,9 +91,44 @@
         <img src="../resources/img/add-fav.png" class="fav" id="fav-image-3">
     </div>
     <button id="edit-favorites-button">Edit Favorites</button>
-    
-    <div class = "loader-wrapper">
-        <span class = "loader"><span class="loader-inner"></span></span>
+
+    <!-- Kanban Board -->
+    <div class="kanban-board">
+        <div class="column" id="todo-column">
+            <h3>To Do</h3>
+            <div class="task-container">
+                <!-- Tasks in the "To Do" column will be dynamically added here -->
+            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <div class="column" id="inprogress-column">
+            <h3>In Progress</h3>
+            <div class="task-container">
+                <!-- Tasks in the "In Progress" column will be dynamically added here -->
+            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <div class="column" id="finish-column">
+            <h3>Finish</h3>
+            <div class="task-container">
+                <!-- Tasks in the "Finish" column will be dynamically added here -->
+            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
     </div>
 
     <script type="module">
@@ -103,13 +136,14 @@
         loadProfileData();
     </script>
 
+    <script src="https://code.ionicframework.com/ionicons/2.0.1/js/ionicons.min.js"></script>
     <script type="text/javascript" src="../src/scripts/loader.js"></script> 
+    <script type="module" src="../src/scripts/kanban.js"></script>
     <script type="module" src="../src/scripts/edit-profile.js"></script>
     <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
     <script type="module" src="../src/scripts/logout.js"></script>
-    
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+ 
