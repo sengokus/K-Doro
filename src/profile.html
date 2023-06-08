@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="../resources/ico/icon.ico">
 
     <link rel="stylesheet" href="../src/css/profile-style.css">
     <link rel="stylesheet" href="../src/css/loader-style.css">
@@ -67,15 +68,22 @@
             <label for="name"><span class="bold-label">Name:</span></label>
             <input type="text" id="edit-name" value="">
 
-            <label for="tag"><span class="bold-label">Username:</span></label>
-            <input type="text" id="edit-tag" value="">
+            <div class="input">
+                <label for="tag"><span class="bold-label">Username</span></label>
+                <br><input type="text" id="edit-tag" value="">
+            </div>
 
-            <label for="bio"><span class="bold-label">Bio:</span></label>
-            <textarea id="edit-bio" value=""></textarea>
+            <div class="input">
+                <label for="bio"><span class="bold-label">Bio</span></label>
+                <br><textarea id="edit-bio" value=""></textarea>
+            </div>
 
-            <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
+            <div class="input"> 
+                <label for="edit-profile-picture" class="custom-button">Upload</label>
+                <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
+            </div>
 
-            <div class="save-profile-button" id="edit-submit">
+            <div class="save-cancel-profile-button" id="edit-submit">
                 <button type="submit" name="submit">Save Profile</button>
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
