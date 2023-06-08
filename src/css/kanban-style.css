@@ -1,9 +1,7 @@
-/* kanban-board-style.css */
 body {
-  font-family: 'Sen', sans-serif;
+    font-family: 'Sen', sans-serif;
 }
 
-/* Kanban Board Container */
 .kanban-board {
     display: flex;
     flex-direction: row;
@@ -13,10 +11,9 @@ body {
     gap: 80px;
     max-width: 80%;
     margin: 0 auto;
-  }
-  
-  /* Kanban Board Columns */
-  .column {
+}
+
+.column {
     flex: auto;
     background-color: #f5edf6;
     border-radius: 10px;
@@ -24,39 +21,33 @@ body {
     height: 350px;
     width: 020px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .column h3 {
+}
+
+.column h3 {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
-  }
-  
+}
 
-  /* Task Card Colors */
-  #todo-column {
+#todo-column {
     background-color: #fae6e0;
     border-left: 6px solid #ff7043;
-  }
-  
-#inprogress-column{
+}
+
+#inprogress-column {
     background-color: #f1f8ff;
     border-left: 6px solid #1976d2;
-  }
-  
-#finish-column{
+}
+
+#finish-column {
     background-color: #f5fff5;
     border-left: 6px solid #388e3c;
-  }
-  
+}
 
-  
-  .task-card .task-actions button:hover {
+.task-card .task-actions button:hover {
     background-color: rgba(0, 0, 0, 0.1);
-  }
-  
+}
 
-  
 div.task-container {
     background-color: white;
     width: 370px;
@@ -69,10 +60,9 @@ div.task-container {
 
 .task:hover {
     background-color: #d0d0d0;
-  }
-  
-  /* Modal Styles */
-  .modal {
+}
+
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -86,42 +76,42 @@ div.task-container {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-  }
-  
-  .modal.show {
+}
+
+.modal.show {
     opacity: 1;
     pointer-events: auto;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fff;
     padding: 2em 6em;
     border-radius: 5px;
     max-width: 400px;
-  }
-  
-  .modal h2 {
-    text-align: center;
+}
+
+.modal h2 {
+  text-align: center;
     margin-bottom: 0.5em;
     letter-spacing: -0.04em;
-  }
-  
-  .modal form {
+}
+
+.modal form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  .modal input[type="text"] {
+}
+
+.modal input[type="text"] {
     padding: 10px;
     height: 8em;
     width: 20em;
     border: none;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
-  
-  .modal button[type="submit"] {
+}
+
+.modal button[type="submit"] {
     padding: 10px;
     border-radius: 5px;
     background-color: #4caf50;
@@ -129,9 +119,9 @@ div.task-container {
     border: none;
     cursor: pointer;
     transition: 0.3s all ease;
-  }
+}
 
-  .modal #deleteTaskButton {
+.modal #deleteTaskButton {
     padding: 10px;
     border-radius: 5px;
     background-color: #af4c4c;
@@ -139,25 +129,25 @@ div.task-container {
     border: none;
     cursor: pointer;
     transition: 0.3s all ease;
-  }
+}
 
-  .modal #deleteTaskButton:hover {
+.modal #deleteTaskButton:hover {
     background-color: #a03c3c;
-  }
-  
-  .modal button[type="submit"]:hover {
-    background-color: #45a049;
-  }
+}
 
-  .task-form input {
+.modal button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.task-form input {
     border: none;
     border-radius: 0.4em;
     padding: 0.5em;
     font-family: 'Public Sans', sans-serif;
     margin-right: 0.5em;
-  }
+}
 
-  .task-form button {
+.task-form button {
     padding: 0.5em 0.7em;
     font-size: 0.8em;
     font-weight: bold;
@@ -167,12 +157,13 @@ div.task-container {
     border-radius: 0.3em;
     cursor: pointer;
     transition: 0.3s all ease;
-  }
+}
 
-  .task-form button:hover {
+.task-form button:hover {
     background-color: rgb(87, 113, 160);
-  }
-  #cancelButton{
+}
+
+#cancelButton{
     padding: 10px;
     border-radius: 5px;
     background-color: #020202;
@@ -180,5 +171,4 @@ div.task-container {
     border: none;
     cursor: pointer;
     transition: 0.3s all ease;
-  }
-  
+}

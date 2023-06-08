@@ -1,160 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Profile</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/icon" href="../resources/ico/icon.ico">
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="../resources/ico/icon.ico">
 
-        <link rel="stylesheet" href="../src/css/profile-style.css">
-        <link rel="stylesheet" href="../src/css/loader-style.css">
-        <link rel="stylesheet" href="../src/css/banner-style.css">
-        <link rel="stylesheet" href="../src/css/kanban-style.css"> <!-- Added Kanban Board CSS -->
+    <link rel="stylesheet" href="../src/css/profile-style.css">
+    <link rel="stylesheet" href="../src/css/loader-style.css">
+    <link rel="stylesheet" href="../src/css/banner-style.css">
+    <link rel="stylesheet" href="../src/css/kanban-style.css"> <!-- Added Kanban Board CSS -->
 
-        <script type="module" src="../src/scripts/editFav.js"></script>
-        <script type="module" src="../src/scripts/nav-bar.js"></script> 
-        <script type="module" src="../src/scripts/profile.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script type="module" src="../src/scripts/editFav.js"></script>
+    <script type="module" src="../src/scripts/nav-bar.js"></script> 
+    <script type="module" src="../src/scripts/profile.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
-    </head>
-    <body onload="updateLoginButton()">
-        <!-- Temp banner, might be changed or deleted -->
-        <img src="../resources/img/aespa_girls.jpg" id="banner">
-            
-        <!-- Logo, not final -->
-        <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
 
-        <!-- Navigation bar -->
-        <nav class="nav">
-            <ul>
-                <li>
-                    <span class="logout-icon">
-                        <ion-icon name="exit-outline"></ion-icon>
-                        <a class="home-label" id ="logout-button">Log Out</a>
-                    </span>
-                </li>
-                <li>
-                    <span class="back-icon">
-                        <ion-icon name="home-outline"></ion-icon>
-                        <a class="home-label" href="home.html" id ="home-button">Home</a>
-                    </span>
-                </li>
-            </ul>
-        </nav>
-        <div class="info-container">
-            <img src="" id="profile-pic">
+</head>
+<body onload="updateLoginButton()">
+    <img src="../resources/img/aespa_girls.jpg" id="banner">
+    <span class="logo" id="logo"><img src="../resources/img/logo_1x.png"></span>
+    <nav class="nav">
+        <ul>
+            <li>
+                <span class="logout-icon">
+                    <ion-icon name="exit-outline"></ion-icon>
+                    <a class="home-label" id ="logout-button">Log Out</a>
+                </span>
+            </li>
+            <li>
+                <span class="back-icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <a class="home-label" href="home.html" id ="home-button">Home</a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+    <div class="info-container">
+        <img src="" id="profile-pic">
 
-            <div id="user-info">
-                <span id="user-name"><h1></h1></span>
-                <span id="user-tag"><h3></h3></span>
-                <span id="user-bio"><p></p></span>
-                <div class="edit-profile-container">
-                    <button class="edit-profile-button" onclick="toggleEditProfile()" id="edit-button">Edit Profile</button>
-                </div>
+        <div id="user-info">
+            <span id="user-name"><h1></h1></span>
+            <span id="user-tag"><h3></h3></span>
+            <span id="user-bio"><p></p></span>
+            <div class="edit-profile-container">
+                <button class="edit-profile-button" onclick="toggleEditProfile()" id="edit-button">Edit Profile</button>
             </div>
         </div>
-        
-        <div class="edit-container" id= edit-profile-data style="display:none;">
-            <form id="edit-profile-form">
-                <div class="input">
-                    <label for="name"><span class="bold-label">Name:</span></label>
-                    <br><input type="text" id="edit-name" value="">
-                </div>
+    </div>
+    
+    <div class="edit-container" id= edit-profile-data style="display:none;">
+        <form id="edit-profile-form">
+            <div class="input">
+                <label for="name"><span class="bold-label">Name:</span></label>
+                <br><input type="text" id="edit-name" value="">
+            </div>
 
-                <div class="input">
-                    <label for="tag"><span class="bold-label">Username</span></label>
-                    <br><input type="text" id="edit-tag" value="">
-                </div>
+            <div class="input">
+                <label for="tag"><span class="bold-label">Username</span></label>
+                <br><input type="text" id="edit-tag" value="">
+            </div>
 
-                <div class="input">
-                    <label for="bio"><span class="bold-label">Bio</span></label>
-                    <br><textarea id="edit-bio" value=""></textarea>
-                </div>
+            <div class="input">
+                <label for="bio"><span class="bold-label">Bio</span></label>
+                <br><textarea id="edit-bio" value=""></textarea>
+            </div>
 
-                <div class="input"> 
-                    <label for="edit-profile-picture" class="custom-button">Upload</label>
-                    <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
-                </div>
+            <div class="input"> 
+                <label for="edit-profile-picture" class="custom-button">Upload</label>
+                <input type="file" id="edit-profile-picture" onchange="previewProfilePicture(event)">
+            </div>
 
-                <div class="save-cancel-profile-button" id="edit-submit">
-                    <button type="submit" name="submit">Save Profile</button>
-                    <button type="button" onclick="toggleEditProfile();location.reload()">Cancel</button>
-                </div>
-                <div class="cancel-profile-button" id="edit-cancel">
-                </div>
+            <div class="save-cancel-profile-button" id="edit-submit">
+                <button type="submit" name="submit">Save Profile</button>
+                <button type="button" onclick="toggleEditProfile();location.reload()">Cancel</button>
+            </div>
+            <div class="cancel-profile-button" id="edit-cancel">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <h2 id="fav-text">Favorites</h2>
+    <div class="fav-container">
+        <img src="../resources/img/add-fav.png" class="fav" id="fav-image-1">
+        <img src="../resources/img/add-fav.png" class="fav" id="fav-image-2">
+        <img src="../resources/img/add-fav.png" class="fav" id="fav-image-3">
+    </div>
+    
+    <div class="edit-fav-button">
+        <button id="edit-favorites-button">Edit Favorites</button>
+    </div>
+
+    <div class="kanban-board">
+        <div class="column" id="todo-column">
+            <h3>To Do</h3>
+            <div class="task-container">
+            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
             </form>
         </div>
-        <hr>
-        <h2 id="fav-text">Favorites</h2>
-        <div class="fav-container">
-            <img src="../resources/img/add-fav.png" class="fav" id="fav-image-1">
-            <img src="../resources/img/add-fav.png" class="fav" id="fav-image-2">
-            <img src="../resources/img/add-fav.png" class="fav" id="fav-image-3">
-        </div>
-        
-        <div class="edit-fav-button">
-            <button id="edit-favorites-button">Edit Favorites</button>
-        </div>
-
-        <!-- Kanban Board -->
-        <div class="kanban-board">
-            <div class="column" id="todo-column">
-                <h3>To Do</h3>
-                <div class="task-container">
-                    <!-- Tasks in the "To Do" column will be dynamically added here -->
-                </div>
-                <form class="task-form">
-                    <input type="text" placeholder="Enter a task" required>
-                    <button type="submit">Add Task</button>
-                </form>
+        <div class="column" id="inprogress-column">
+            <h3>In Progress</h3>
+            <div class="task-container">
             </div>
-            <div class="column" id="inprogress-column">
-                <h3>In Progress</h3>
-                <div class="task-container">
-                    <!-- Tasks in the "In Progress" column will be dynamically added here -->
-                </div>
-                <form class="task-form">
-                    <input type="text" placeholder="Enter a task" required>
-                    <button type="submit">Add Task</button>
-                </form>
-            </div>
-            <div class="column" id="finish-column">
-                <h3>Finished</h3>
-                <div class="task-container">
-                    <!-- Tasks in the "Finish" column will be dynamically added here -->
-                </div>
-                <form class="task-form">
-                    <input type="text" placeholder="Enter a task" required>
-                    <button type="submit">Add Task</button>
-                </form>
-            </div>
+            <form class="task-form">
+                <input type="text" placeholder="Enter a task" required>
+                <button type="submit">Add Task</button>
+            </form>
         </div>
-        <div id="editModal" class="modal">
-            <div class="modal-content">
-                <h2>Edit Task</h2>
-                <form>
-                <input type="text" id="editTaskInput" placeholder="Edit task"required>
-                <button type="submit">Save</button>
-                <button type="button" id="deleteTaskButton">Delete</button>
-                </form>
-            </div>
-            
-        <div class="loader-wrapper">
-            <span class="loader"><span class="loader-inner"></span></span>
-        </div>
-
         <div class="column" id="finish-column">
             <h3>Finished</h3>
             <div class="task-container">
-                <!-- Tasks in the "Finish" column will be dynamically added here -->
             </div>
             <form class="task-form">
                 <input type="text" placeholder="Enter a task" required>
@@ -182,17 +149,13 @@
         loadProfileData();
     </script>
 
-        <script type="module">
-            import { loadProfileData } from "../src/scripts/profile.js";
-            loadProfileData();
-        </script>
-
-        <script type="text/javascript" src="../src/scripts/loader.js"></script> 
-        <script type="module" src="../src/scripts/kanban.js"></script>   
-        <script type="module" src="../src/scripts/edit-profile.js"></script>
-        <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
-        <script type="module" src="../src/scripts/logout.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </body>
+    <script type="text/javascript" src="../src/scripts/loader.js"></script> 
+    <script type="module" src="../src/scripts/kanban.js"></script>   
+    <script type="module" src="../src/scripts/edit-profile.js"></script>
+    <script type="text/javascript" src="../src/scripts/edit-popup.js"></script>
+    <script type="module" src="../src/scripts/logout.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
 </html>
+ 

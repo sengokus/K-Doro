@@ -5,7 +5,6 @@ const minusBtn = document.getElementById("minus-five");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
-// TODO: sound effect
 var alarmSFX = new Audio("../resources/sfx/alarm.wav");
 
 minutes.textContent = 25;
@@ -15,21 +14,6 @@ startBtn.addEventListener("click", start);
 stopBtn.addEventListener("click", breakTime);
 addBtn.addEventListener("click", addTime);
 minusBtn.addEventListener("click", subtractTime);
-
-// var protocol = location.protocol;
-// var url = protocol + "//youtube.com";
-// var iframe = document.querySelector("iframe");
-// var win = iframe.contentWindow;
-// console.log('URL: ', url);
-// console.log('win: ', win);
-
-// function playVideo() {
-//     window.postMessage("playVideo", url);
-// }
-
-// function pauseVideo() {
-//     window.postMessage("pauseVideo", url);
-// }
 
 function disableButtons() {
     startBtn.disabled = true;

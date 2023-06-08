@@ -15,7 +15,6 @@ function randomizeImage() {
     var randImg = images[Math.floor(Math.random() * images.length)];
   
     imgCard.src = "../resources/img/" + randImg;
-    // console.log(randImg);
 }
 
 // waits for the page to load before randomizing the image

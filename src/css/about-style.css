@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-/* Linear gradient background animation */
 :root {
     --gradient: linear-gradient(
         85deg, 
@@ -13,8 +12,6 @@
         rgb(197, 255, 172));
 }
 
-/* Background animation */
-/* Off to preserve framerate */
 @keyframes animatebackground {
     from {
         background-position: left;
@@ -41,7 +38,6 @@ ion-icon {
     font-size: 1.3em;
 }
 
-/* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
     position: absolute;
@@ -83,14 +79,11 @@ ion-icon {
     width: 20em;
     height: 25em;
     transform: translateY(-0.2em);
-    /* transition: 0.3s all ease; */
 }
 
 .right-pane {
     font-family: 'Sen', sans-serif;
     color: rgb(29, 40, 58);
-    /* background-color: #E8F4F3; */
-    /* border-radius: 3em; */
 }
 
 .about-container {
@@ -100,7 +93,6 @@ ion-icon {
     top: 30%;
     left: 19%;
 }
-
 
 #about-label {
     position: relative;

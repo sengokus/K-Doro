@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-/* Linear gradient background animation */
 :root {
     --gradient: linear-gradient(
         85deg, 
@@ -13,8 +12,6 @@
         rgb(197, 255, 172));
 }
 
-/* Background animation */
-/* Off to preserve framerate */
 @keyframes animatebackground {
     from {
         background-position: left;
@@ -41,7 +38,6 @@ ion-icon {
     font-size: 1.3em;
 }
 
-/* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
     position: absolute;
@@ -109,7 +105,6 @@ ion-icon {
 
 .team-grid-column img {
     margin: 0.2em 0.2em;
-    /* vertical-align: middle; */
     width: 4.6em;
     max-width: 5em;
     border-radius: 50%;

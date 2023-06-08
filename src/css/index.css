@@ -4,7 +4,6 @@
     max-height: 100vh;
 }
 
-/* Linear gradient background animation */
 :root {
     --gradient: linear-gradient(
         85deg, 
@@ -14,8 +13,6 @@
         rgb(197, 255, 172));
 }
 
-/* Background animation */
-/* Off to preserve framerate */
 @keyframes animatebackground {
     from {
         background-position: left;
@@ -42,7 +39,6 @@ ion-icon {
     font-size: 1.3em;
 }
 
-/* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
     position: absolute;
@@ -111,34 +107,6 @@ ion-icon {
     font-size: 5em;
     text-align: center;
     padding-top: 1.5em;
-}
-
-#group-hybe {
-    display: none;
-}
-
-#group-jyp {
-    display: none;
-}
-
-#group-sm {
-    display: none;
-}
-
-#group-yg {
-    display: none;
-}
-
-#band-bts {
-    display: none;
-}
-
-#band-txt {
-    display: none;
-}
-
-#band-svt {
-    display: none;
 }
 
 .label-logo {

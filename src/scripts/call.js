@@ -1,3 +1,4 @@
+// store data for each band's video IDs, thumbnails, and labels
 const bandData = {
     bts: {
         videos: ["JmqOJ9XxF8A", "4GwQLbGhhAA", "CRxXTqp5tTM"],
@@ -61,10 +62,12 @@ const bandData = {
     }
 };
 
+// get the band and video index parameters from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const band = urlParams.get('band');
 const videoIndex = parseInt(urlParams.get('video')) || 0;
 
+// show the corresponding band videos
 if (band) {
     console.log(band);
     const selectedBand = document.getElementById(`band-${band}`);
@@ -103,27 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoIndex = parseInt(urlParams.get('video')) || 0;
   
     if (band) {
-      const selectedBand = document.getElementById(`band-${band}-vid`);
-      if (selectedBand) {
-        selectedBand.style.display = "flex";
-  
-        const currentBandData = bandData[band];
-        if (currentBandData) {
-          const video = currentBandData.videos[videoIndex];
-          const iframeContainer = document.getElementById('video-container');
-  
-          if (video) {
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${video}`;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = '0';
-            iframe.allowFullscreen = true;
-  
-            iframeContainer.appendChild(iframe);
-          }
+        const selectedBand = document.getElementById(`band-${band}-vid`);
+        if (selectedBand) {
+            selectedBand.style.display = "flex";
+            const currentBandData = bandData[band];
+
+            if (currentBandData) {
+                const video = currentBandData.videos[videoIndex];
+                const iframeContainer = document.getElementById('video-container');
+
+                if (video) {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${video}?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${video}`;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.border = '0';
+                    iframe.allowFullscreen = true;
+
+                    iframeContainer.appendChild(iframe);
+                }
+            }
         }
-      }
     }
-  });
-  
+});

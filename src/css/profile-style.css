@@ -3,22 +3,19 @@
     padding: 0;
 }
 
-/* Linear gradient background animation */
 :root {
-    --gradient: linear-gradient(
-        85deg, 
-        rgb(255, 196, 232),
-        rgb(255, 229, 187),
-        rgb(211, 227, 255),
-        rgb(197, 255, 172));
+    --gradient: linear-gradient(85deg,
+            rgb(255, 196, 232),
+            rgb(255, 229, 187),
+            rgb(211, 227, 255),
+            rgb(197, 255, 172));
 }
 
-/* Background animation */
-/* Off to preserve framerate */
 @keyframes animatebackground {
     from {
         background-position: left;
     }
+
     to {
         background-position: right;
     }
@@ -35,13 +32,13 @@ body {
     animation-name: animatebackground;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+
 }
 
 ion-icon {
     font-size: 1.3em;
 }
 
-/* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
     position: absolute;
@@ -95,10 +92,10 @@ ion-icon {
 }
 
 #fav-image-1.fav {
-  width: 15em;
+    width: 15em;
     max-width: 16em;
     height: 15em;
-    margin-right: 0.2em; 
+    margin-right: 0.2em;
     border-radius: 1.2em;
     transition: 0.3s all ease;
 }
@@ -109,10 +106,10 @@ ion-icon {
 }
 
 #fav-image-2.fav {
-  width: 15em;
+    width: 15em;
     max-width: 16em;
     height: 15em;
-    margin-right: 0.2em; 
+    margin-right: 0.2em;
     border-radius: 1.2em;
     transition: 0.3s all ease;
 }
@@ -123,10 +120,10 @@ ion-icon {
 }
 
 #fav-image-3.fav {
-  width: 15em;
+    width: 15em;
     max-width: 16em;
     height: 15em;
-    margin-right: 0.2em; 
+    margin-right: 0.2em;
     border-radius: 1.2em;
     transition: 0.3s all ease;
 }
@@ -139,7 +136,7 @@ ion-icon {
 .fav:last-child {
     margin-right: 0;
 }
-  
+
 #profile-pic {
     width: 15em;
     height: 15em;
@@ -174,7 +171,7 @@ hr {
 #user-name {
     color: rgb(29, 40, 58);
     font-family: 'Sen', sans-serif;
-    font-weight: bold; 
+    font-weight: bold;
     font-size: 2.1em;
     margin-top: 5px;
     letter-spacing: -0.08em;
@@ -221,7 +218,7 @@ hr {
 }
 
 .edit-profile-button:hover {
-    background-color:rgb(87, 113, 160);
+    background-color: rgb(87, 113, 160);
 }
 
 .overlay {
@@ -233,16 +230,16 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
-    z-index: 9999; /* Make sure the overlay appears above other elements */
-    display: none; /* Initially hide the overlay */
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
     color: white;
     font-family: 'Public Sans', sans-serif;
     font-size: 1.5em;
     overflow: scroll;
-  }
-  
-  .overlay button {
+}
+
+.overlay button {
     padding: 0.5em 0.7em;
     font-size: 0.9em;
     font-weight: bold;
@@ -251,98 +248,93 @@ hr {
     border-radius: 0.3em;
     cursor: pointer;
     transition: 0.3s all ease;
-  }
+}
 
-  .overlay button:hover {
+.overlay button:hover {
     background-color: rgb(87, 113, 160);
-  }
-  
-  .artist-selection {
+}
+
+.artist-selection {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .artist {
-    /* margin: 10px; */
-    cursor: pointer;
+}
 
-  }
-  
-  .artist-image {
+.artist {
+    cursor: pointer;
+}
+
+.artist-image {
     width: 10%;
     height: 10%;
     border-radius: 0.5em;
     margin-bottom: 20px;
     margin-top: 20px;
-  }
-  
-  .artist:hover .remove-overlay {
-    display: inline;
-  }
+}
 
-  .favorite {
+.artist:hover .remove-overlay {
     display: inline;
-  }
+}
 
-  .favorite img {
+.favorite {
+    display: inline;
+}
+
+.favorite img {
     height: 7em;
     width: 7em;
     transition: 0.3s all ease;
-  }
+}
 
-  .favorite-image {
+.favorite-image {
     width: 10%;
     height: 10%;
-    border-radius: 0.7em;;
-  }
-  
-  /* Styles for artist containers */
-  .artist-container {
+    border-radius: 0.7em;
+    ;
+}
+
+.artist-container {
     display: inline-block;
-    width: 25%; /* Adjust this value to control the width of each container */
-    /* padding: 10px; */
+    width: 25%;
     box-sizing: border-box;
-  }
-  
-  .artist-image {
+}
+
+.artist-image {
     width: 50%;
     height: auto;
     max-height: 50%;
-  }
-  
-  .artist-name {
+}
+
+.artist-name {
     text-align: center;
-  }
-  
-  /* Styles for favorite elements */
-  .fav {
+}
+
+.fav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%; /* Adjust this value to control the width of each favorite */
+    width: 25%;
     padding: 10px;
     box-sizing: border-box;
-  }
-  
-  .fav-image {
+}
+
+.fav-image {
     width: 80%;
     height: auto;
-  }
-  
-  .remove-overlay {
+}
+
+.remove-overlay {
     display: none;
-  }
-  
-  /* Styles for artist and favorite rows */
-  .row-container {
+}
+
+.row-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 20px; /* Adjust this value to control the spacing between rows */
-  }
-  
-  .save-button {
+    margin-bottom: 20px;
+}
+
+.save-button {
     margin-top: 6em;
     margin-bottom: 2em;
     padding: 2em 3em;
@@ -351,25 +343,24 @@ hr {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .add-fav-image {
+}
+
+.add-fav-image {
     width: 100%;
     height: auto;
     transition: 0.3s all ease;
-  }
-  
-  .add-fav-image:hover {
+}
+
+.add-fav-image:hover {
     opacity: 0.7;
-  }
-  
-  /* Additional styles */
-  .no-favorites-message {
+}
+
+.no-favorites-message {
     text-align: center;
     margin-top: 10px;
-  }
-  
-  .change-favorites-button {
+}
+
+.change-favorites-button {
     margin-top: 10px;
     padding: 5px 10px;
     background-color: #000000;
@@ -378,13 +369,13 @@ hr {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .edit-fav-button {
+.edit-fav-button {
     text-align: center;
-  }
+}
 
-  #edit-favorites-button {
+#edit-favorites-button {
     padding: 0.5em 0.7em;
     font-size: 0.9em;
     font-weight: bold;
@@ -397,13 +388,13 @@ hr {
     position: flex;
     left: 31.4%;
     top: 86%;
-  }
+}
 
-  #edit-favorites-button:hover {
+#edit-favorites-button:hover {
     background-color: rgb(87, 113, 160);
-  }
+}
 
-  .input {
+.input {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.2em;
@@ -412,9 +403,9 @@ hr {
 }
 
 .edit-container {
-  font-family: 'Public', sans-serif;
-  font-weight: bold;
-  text-align: center;
+    font-family: 'Public', sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
 
 .edit-container input, .edit-container textarea {
@@ -425,70 +416,61 @@ hr {
     font-family: 'Public', sans-serif;
     border-radius: 0.5em;
     padding: 0.7em;
-    /* margin-left: 2em; */
     border: none;
 }
 
 label[for="edit-profile-picture"] {
-  background-color: rgb(142, 166, 212);
-  color:rgb(236, 239, 244);
-  padding: 0.7em 2em;
-  border-radius: 0.6em;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  
+    background-color: rgb(142, 166, 212);
+    color: rgb(236, 239, 244);
+    padding: 0.7em 2em;
+    border-radius: 0.6em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
 }
 
 label[for="edit-profile-picture"]:hover {
-  background-color: rgb(87, 113, 160);
+    background-color: rgb(87, 113, 160);
 }
 
 #edit-profile-picture {
-  width: 0.01em;
-  height: 0.01em;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+    width: 0.01em;
+    height: 0.01em;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
 #edit-submit button, #edit-cancel button {
-  font-family: 'Public', sans-serif;
-  font-weight: bold;
-  color:rgb(236, 239, 244);
-  background: none;
-  background-color: rgb(142, 166, 212);
-  padding: 0.7em;
-  border-radius: 0.3em;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s all ease;
+    font-family: 'Public', sans-serif;
+    font-weight: bold;
+    color: rgb(236, 239, 244);
+    background: none;
+    background-color: rgb(142, 166, 212);
+    padding: 0.7em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s all ease;
 }
 
 #edit-submit button:hover {
-  background-color:rgb(87, 113, 160);
+    background-color: rgb(87, 113, 160);
 }
 
-img.add-favorite-image{
+img.add-favorite-image {
     width: 12%;
     height: auto;
 }
 
-div.favorite-content{
+div.favorite-content {
     width: 100%;
     height: auto;
 }
 
-div.artist-container{
+div.artist-container {
     width: 53%;
     height: auto;
     margin-bottom: 0.5em;
-}
-
-/* Styles specific to overlay1 */
-.overlay {
-  /* Add specific styles for overlay1 */
-  /* For example: */
-  background-color: rgba(0, 0, 0, 0.5);
 }
