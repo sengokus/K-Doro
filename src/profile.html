@@ -51,12 +51,12 @@
         </ul>
     </nav>
     <div class="info-container">
-        <img src="" id="profile-pic" alt="Profile Picture">
+        <img src="" id="profile-pic">
 
         <div id="user-info">
-            <span id="user-name"><h1>""</h1></span>
-            <span id="user-tag"><h3>""</h3></span>
-            <span id="user-bio"><p>"".</p></span>
+            <span id="user-name"><h1></h1></span>
+            <span id="user-tag"><h3></h3></span>
+            <span id="user-bio"><p></p></span>
             <div class="edit-profile-container">
                 <button class="edit-profile-button" onclick="toggleEditProfile()" id="edit-button">Edit Profile</button>
             </div>
@@ -65,8 +65,10 @@
     
     <div class="edit-container" id= edit-profile-data style="display:none;">
         <form id="edit-profile-form">
-            <label for="name"><span class="bold-label">Name:</span></label>
-            <input type="text" id="edit-name" value="">
+            <div class="input">
+                <label for="name"><span class="bold-label">Name:</span></label>
+                <br><input type="text" id="edit-name" value="">
+            </div>
 
             <div class="input">
                 <label for="tag"><span class="bold-label">Username</span></label>
@@ -85,9 +87,9 @@
 
             <div class="save-cancel-profile-button" id="edit-submit">
                 <button type="submit" name="submit">Save Profile</button>
+                <button type="button" onclick="toggleEditProfile();location.reload()">Cancel</button>
             </div>
             <div class="cancel-profile-button" id="edit-cancel">
-                <button type="button" onclick="toggleEditProfile();location.reload()">Cancel</button>
             </div>
         </form>
     </div>
@@ -98,7 +100,10 @@
         <img src="../resources/img/add-fav.png" class="fav" id="fav-image-2">
         <img src="../resources/img/add-fav.png" class="fav" id="fav-image-3">
     </div>
-    <button id="edit-favorites-button">Edit Favorites</button>
+    
+    <div class="edit-fav-button">
+        <button id="edit-favorites-button">Edit Favorites</button>
+    </div>
 
     <!-- Kanban Board -->
     <div class="kanban-board">
@@ -123,7 +128,7 @@
             </form>
         </div>
         <div class="column" id="finish-column">
-            <h3>Finish</h3>
+            <h3>Finished</h3>
             <div class="task-container">
                 <!-- Tasks in the "Finish" column will be dynamically added here -->
             </div>
@@ -137,7 +142,7 @@
         <div class="modal-content">
             <h2>Edit Task</h2>
             <form>
-              <input type="text" id="editTaskInput" placeholder="Task content" required>
+              <input type="text" id="editTaskInput" placeholder="Edit task"required>
               <button type="submit">Save</button>
               <button type="button" id="deleteTaskButton">Delete</button>
             </form>

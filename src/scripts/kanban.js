@@ -67,6 +67,7 @@ const handleTaskSubmission = (event, column) => {
     // Add the task to Firestore
     addTaskToFirestore(uid, column, content);
 
+    location.reload();
     // Reset the input field
     input.value = "";
   }
