@@ -16,7 +16,7 @@ const loadProfileData = async () => {
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        console.log("Document data stored:", userData);
+        console.log("Document data stored.");
 
         // Store user data in session storage
         sessionStorage.setItem("userData", JSON.stringify(userData));

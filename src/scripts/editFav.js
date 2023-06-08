@@ -5,6 +5,7 @@ import { getStorage, ref, getDownloadURL, listAll } from "https://www.gstatic.co
 
 const auth = getAuth();
 
+
 // Initialize the storage module
 const storage = getStorage();
 
@@ -28,6 +29,16 @@ function populateArtistSelection() {
   
     overlay.classList.add("overlay");
     document.body.appendChild(overlay);
+
+
+    // const overlay1 = document.createElement("div");
+    // overlay1.classList.add("overlay", "overlay1");
+    // document.body.appendChild(overlay1);
+    
+    // const overlay2 = document.createElement("div");
+    // overlay2.classList.add("overlay", "overlay2");
+    // document.body.appendChild(overlay2);
+    
     
   
     // Variable to track whether the "Change Favorites" button was clicked
@@ -104,7 +115,6 @@ function populateArtistSelection() {
   function isArtistInFavorites(artist) {
     return favorites.some((favorite) => favorite.artist === artist.name);
   }
-  
   
   
   function createArtistContainer(artist, overlay) {

@@ -457,3 +457,18 @@ label[for="edit-profile-picture"]:hover {
 #edit-submit button:hover {
   background-color:rgb(87, 113, 160);
 }
+
+
+/* Styles specific to overlay1 */
+.overlay1 {
+  /* Add specific styles for overlay1 */
+  /* For example: */
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* Styles specific to overlay2 */
+.overlay2 {
+  /* Add specific styles for overlay2 */
+  /* For example: */
+  background-color: rgba(0, 0, 255, 0.5);
+}

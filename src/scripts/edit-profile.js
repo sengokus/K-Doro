@@ -21,7 +21,7 @@ function previewProfilePicture(event) {
 
   if (file) {
     reader.readAsDataURL(file);
-  } else {
+  } else {  
     profilePicturePreview.src = "";
   }
 }
