@@ -470,7 +470,6 @@ label[for="edit-profile-picture"]:hover {
   background-color:rgb(87, 113, 160);
 }
 
-
 img.add-favorite-image{
     width: 12%;
     height: auto;
@@ -485,4 +484,11 @@ div.artist-container{
     width: 53%;
     height: auto;
     margin-bottom: 0.5em;
+}
+
+/* Styles specific to overlay1 */
+.overlay {
+  /* Add specific styles for overlay1 */
+  /* For example: */
+  background-color: rgba(0, 0, 0, 0.5);
 }

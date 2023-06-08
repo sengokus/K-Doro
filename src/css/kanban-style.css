@@ -95,7 +95,7 @@ div.task-container {
   
   .modal-content {
     background-color: #fff;
-    padding: 20px;
+    padding: 2em 6em;
     border-radius: 5px;
     max-width: 400px;
   }
@@ -114,6 +114,9 @@ div.task-container {
   
   .modal input[type="text"] {
     padding: 10px;
+    height: 8em;
+    width: 20em;
+    border: none;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
