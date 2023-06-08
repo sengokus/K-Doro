@@ -139,6 +139,9 @@ function populateArtistSelection() {
     // Add event listeners for hover and click
     favoriteElement.addEventListener("mouseenter", () => {
       removeOverlay.style.display = "block";
+      removeOverlay.style.fontFamily = "Sen, sans-serif";
+      removeOverlay.style.fontSize = "0.8em";
+      removeOverlay.style.transition = "0.3s all ease";
     });
   
     favoriteElement.addEventListener("mouseleave", () => {
@@ -198,7 +201,6 @@ function createArtistElement(artist, overlay) {
 
   const artistName = document.createElement("span");
   artistName.classList.add("artist-name");
-  artistName.textContent = artist.name;
 
   // Disable selection if the artist is already a favorite
   if (isArtistInFavorites(artist)) {
