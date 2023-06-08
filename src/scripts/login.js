@@ -16,7 +16,7 @@ loginForm.addEventListener("submit", (event) => {
     const password = document.getElementById("password-login").value;
   
     // TODO: Use the email, username, and password to register the user
-    console.log(`Signing user: ${email}, ${password}`);
+    // console.log(`Signing user: ${email}, ${password}`);
     //registerUser(email,username,password1, password2);
     signInWithEmailAndPassword(auth, email, password)
     .then(async (userCredential) => {
