@@ -8,3 +8,12 @@
     -webkit-filter: brightness();
     filter: brightness(0.7);
 }
+
+#logo {
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 3em;
+    top: 0.6em;
+    height: 6.7em;
+}

@@ -5,11 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/icon" href="../resources/ico/icon.ico">
     
         <link rel="stylesheet" href="../src/css/index.css">
         <link rel="stylesheet" href="../src/css/loader-style.css">
         <link rel="stylesheet" href="../src/css/banner-style.css">
-        <script type="module" src="../src/scripts/nav-bar.js"></script> 
+        <script type="module" src="../src/scripts/nav-bar.js"></script>
+        
         
     
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,10 +44,16 @@
                         <a href="profile.html" class="login-label">Profile</a>
                     </span>
                 </li>
-                <<li>
+                <li>
                     <span class="logout-icon">
                         <ion-icon name="exit-outline"></ion-icon>
-                        <a class="home-label" id ="logout-button">Log Out</a>
+                        <a href="profile.html" id ="logout-button">Log Out</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="about-icon">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <a href="about.html" class="about-label">About</a>
                     </span>
                 </li>
             </ul>
@@ -98,6 +106,7 @@
     </div>
     <script type="text/javascript" src="../src/scripts/loader.js"></script> 
     <script type="module" src="../index.js"></script>
+    <script type="module" src="../src/scripts/logout.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
  
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

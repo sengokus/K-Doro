@@ -1,6 +1,7 @@
 import { db } from "../../index.js";
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js';
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js";
+import { populateFavorites } from "./editFav.js"; // Import the populateFavorites function
 
 const auth = getAuth();
 
@@ -15,16 +16,25 @@ const loadProfileData = async () => {
 
       if (docSnap.exists()) {
         const userData = docSnap.data();
-        console.log("Document data:", userData);
+        console.log("Document data stored:", userData);
 
         // Store user data in session storage
         sessionStorage.setItem("userData", JSON.stringify(userData));
+        console.log("yudipota kag tunga", sessionStorage)
 
         const { username, bio, name, profilePicture } = userData;
         document.getElementById("user-name").textContent = name;
         document.getElementById("user-tag").textContent = username;
         document.getElementById("user-bio").textContent = bio;
         document.getElementById("profile-pic").src = profilePicture;
+
+        // Prefill the edit form
+        document.getElementById("edit-name").value = name;
+        document.getElementById("edit-tag").value = username.replace('@', '');
+        document.getElementById("edit-bio").value = bio;
+
+        // Call the function to populate the favorites
+        populateFavorites();
       } else {
         console.log("No such document!");
       }
@@ -33,7 +43,7 @@ const loadProfileData = async () => {
     }
   } else {
     console.log("User is not logged in!");
-    window.location.href = "login.html"; // Redirect to the login page if user is not logged in
+    window.location.href = "login.html"; // Redirect to the login page if the user is not logged in
   }
 };
 

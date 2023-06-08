@@ -41,15 +41,6 @@ ion-icon {
     font-size: 1.3em;
 }
 
-#logo {
-    position: absolute;
-    display: flex;
-    justify-content: left;
-    left: 3em;
-    top: 0.6em;
-    height: 8.7em;
-}
-
 /* Navigation */
 .nav {
     font-family: 'Public Sans', sans-serif;
@@ -89,11 +80,9 @@ ion-icon {
 }
 
 .left-pane img {
-    width: 25em;
-    height: 30em;
-    object-fit: cover;
-    object-position: 100% 20%;
-    border-radius: 2em;
+    width: 20em;
+    height: 25em;
+    transform: translateY(-0.2em);
     /* transition: 0.3s all ease; */
 }
 
@@ -112,13 +101,6 @@ ion-icon {
     left: 19%;
 }
 
-#logo-circle {
-    width: 25em;
-    height: 25em;
-    object-fit: cover;
-    /* object-position: 100% 20%; */
-    border-radius: 50%;
-}
 
 #about-label {
     position: relative;
@@ -154,7 +136,7 @@ ion-icon {
     text-decoration: none;
     letter-spacing: -0.08em;
     color:rgb(236, 239, 244);
-    left: 30%;
+    left: 25%;
     padding: 0.5em 0.5em;
     margin: 1.2em auto;
     border-radius: 0.5em;

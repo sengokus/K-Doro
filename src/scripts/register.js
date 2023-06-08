@@ -29,21 +29,23 @@ registerForm.addEventListener("submit", (event) => {
           throw new Error('Please make sure passwords match.');
         }
 
-  createUserWithEmailAndPassword(auth, email, password2)
-    .then(async (userCredential) => {
-      // Signed in
-      const userId = userCredential.user.uid;
-      await setDoc(doc(db, "users", userId),{
-        name: username,
-        username: "@" + username,
-        bio:"Edit bio.",
-        profilePicture:"https://firebasestorage.googleapis.com/v0/b/kdoro-f0528.appspot.com/o/profile-pictures%2Fdefault-profile.png?alt=media&token=45b2ff73-7964-4c24-aed2-04473d5758b1",
-      });
-
+      createUserWithEmailAndPassword(auth, email, password2)
+      .then(async (userCredential) => {
+        // Signed in
+        const userId = userCredential.user.uid;
+        await setDoc(doc(db, "users", userId), {
+          name: username,
+          username: "@" + username,
+          bio: "Edit bio.",
+          profilePicture: "https://firebasestorage.googleapis.com/v0/b/kdoro-f0528.appspot.com/o/profile-pictures%2Fdefault-profile.png?alt=media&token=45b2ff73-7964-4c24-aed2-04473d5758b1",
+          favorites: [], // Add an empty array for favorites
+        });
     })
+      
     .then(() => {
       // Redirect to the desired page after successful registration
-      window.location.href = "profile.html";
+      window.alert("Registration successful!");
+      window.location.href = "login.html";
     })
       .catch(error => alert(error.message));
     } catch (e) {
