@@ -96,6 +96,7 @@ const updateProfileData = async (name, username, bio, profilePicture) => {
       sessionStorage.setItem("userData", JSON.stringify(userData));
     }
 
+    alert("Profile updated successfully!")
     location.reload();
   } catch (e) {
     alert(e);
