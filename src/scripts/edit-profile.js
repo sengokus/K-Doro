@@ -28,14 +28,13 @@ function previewProfilePicture(event) {
 
 profilePictureInput.addEventListener("change", previewProfilePicture);
 
-// Function to prefill the edit profile form with user data
-const prefillEditProfileForm = (userData) => {
-  nameField.value = userData.name;
-  tagField.value = userData.username.replace('@', '');
-  bioField.value = userData.bio;
-};
+// // Function to prefill the edit profile form with user data
+// const prefillEditProfileForm = (userData) => {
+//   nameField.value = userData.name;
+//   tagField.value = userData.username.replace('@', '');
+//   bioField.value = userData.bio;
+// };
 
-// Function to update the user's profile data
 const updateProfileData = async (name, username, bio, profilePicture) => {
   try {
     const userId = localStorage.getItem("uid");
@@ -43,23 +42,18 @@ const updateProfileData = async (name, username, bio, profilePicture) => {
       throw new Error("User ID not found in local storage.");
     }
 
-    // Get the user's current authentication state
-    
     const user = auth.currentUser;
 
     // If the user is not already signed in, sign in using the stored UID
     if (!user) {
-      signInAnonymously(auth);
+      await signInAnonymously(auth);
     }
 
-    // Get the updated user object
     const updatedUser = auth.currentUser;
 
-    // Retrieve user data from session storage
     const storedUserData = sessionStorage.getItem("userData");
     let userData = storedUserData ? JSON.parse(storedUserData) : {};
 
-    // Update the user's profile picture if a new one is selected
     if (profilePicture) {
       const storageRef = ref(getStorage(), `profile-pictures/${userId}`);
       await uploadBytes(storageRef, profilePicture);
@@ -69,34 +63,35 @@ const updateProfileData = async (name, username, bio, profilePicture) => {
         name: name,
         username: "@" + username,
         bio: bio,
-        profilePicture: profilePictureUrl
+        profilePicture: profilePictureUrl,
+        favorites: userData.favorites || [] // Preserve the favorites data
       });
 
-      // Update user data in session storage
       userData = {
         ...updatedUser,
         name: name,
         username: "@" + username,
         bio: bio,
-        profilePicture: profilePictureUrl
+        profilePicture: profilePictureUrl,
+        favorites: userData.favorites || [] // Preserve the favorites data
       };
       sessionStorage.setItem("userData", JSON.stringify(userData));
     } else {
-      // If no new profile picture is selected, update the other fields only
       await setDoc(doc(db, "users", userId), {
         name: name,
         username: "@" + username,
         bio: bio,
         profilePicture: userData.profilePicture || "",
+        favorites: userData.favorites || [] // Preserve the favorites data
       });
 
-      // Update user data in session storage
       userData = {
         ...updatedUser,
         name: name,
         username: "@" + username,
         bio: bio,
-        profilePicture: userData.profilePicture || ""
+        profilePicture: userData.profilePicture || "",
+        favorites: userData.favorites || [] // Preserve the favorites data
       };
       sessionStorage.setItem("userData", JSON.stringify(userData));
     }
@@ -106,6 +101,7 @@ const updateProfileData = async (name, username, bio, profilePicture) => {
     alert(e);
   }
 };
+
 
 
 editForm.addEventListener("submit", (event) => {
@@ -121,8 +117,8 @@ editForm.addEventListener("submit", (event) => {
   updateProfileData(name, username, bio, profilePicture);
 });
 
-// Retrieve user data from session storage and prefill the edit profile form
-const userData = JSON.parse(sessionStorage.getItem("userData"));
-if (userData) {
-  prefillEditProfileForm(userData);
-}
+// // Retrieve user data from session storage and prefill the edit profile form
+// const userData = JSON.parse(sessionStorage.getItem("userData"));
+// if (userData) {
+//   prefillEditProfileForm(userData);
+// }

@@ -20,3 +20,4 @@ window.updateLoginButton = async () => {
 
 // Call the updateLoginButton function immediately
 window.updateLoginButton();
+
