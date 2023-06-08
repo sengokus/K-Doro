@@ -22,24 +22,17 @@ function getSelectedArtist() {
   const selectedArtist = localStorage.getItem('selectedArtist');
   return selectedArtist ? JSON.parse(selectedArtist) : null;
 }
+
 function populateArtistSelection() {
     const editFavoritesButton = document.getElementById("edit-favorites-button");
-    const overlay = document.createElement("div");
-    const selectedArtist = getSelectedArtist();
-  
-    overlay.classList.add("overlay");
-    document.body.appendChild(overlay);
 
-
-    // const overlay1 = document.createElement("div");
-    // overlay1.classList.add("overlay", "overlay1");
-    // document.body.appendChild(overlay1);
+    const overlay1 = document.createElement("div");
+    overlay1.classList.add("overlay", "overlay1");
+    document.body.appendChild(overlay1);
     
-    // const overlay2 = document.createElement("div");
-    // overlay2.classList.add("overlay", "overlay2");
-    // document.body.appendChild(overlay2);
-    
-    
+    const overlay2 = document.createElement("div");
+    overlay2.classList.add("overlay", "overlay2");
+    document.body.appendChild(overlay2);
   
     // Variable to track whether the "Change Favorites" button was clicked
     let isChangeFavoritesClicked = false;
@@ -56,12 +49,9 @@ function populateArtistSelection() {
       location.reload();
     });
 
-
-  
     editFavoritesButton.addEventListener("click", () => {
-      overlay.innerHTML = "";
-      overlay.style.display = "block";
-      
+      overlay1.innerHTML = "";
+      overlay1.style.display = "block";
   
       // Create a button to allow changing favorites
       const changeFavoritesButton = document.createElement("button");
@@ -69,44 +59,44 @@ function populateArtistSelection() {
       changeFavoritesButton.classList.add("change-favorites-button");
 
       console.log("first");
-      overlay.appendChild(saveButton);
+      overlay1.appendChild(saveButton);
   
       changeFavoritesButton.addEventListener("click", () => {
         // Set the variable to true when the "Change Favorites" button is clicked
         console.log("yes. Change Favorites button clicked");
         isChangeFavoritesClicked = true;
         // Clear the favorites array and repopulate the artist selection
-        overlay.innerHTML = "";
+        overlay1.innerHTML = "";
   
         artists.forEach((artist) => {
           // Check if the artist is not already in the favorites
           if (!isArtistInFavorites(artist)) {
-            const artistContainer = createArtistContainer(artist, overlay);
-            overlay.appendChild(artistContainer);
+            const artistContainer = createArtistContainer(artist, overlay1);
+            overlay1.appendChild(artistContainer);
           }
         });
   
-        overlay.appendChild(saveButton);
+        overlay1.appendChild(saveButton);
       });
   
-      overlay.appendChild(changeFavoritesButton);
+      overlay1.appendChild(changeFavoritesButton);
   
       if (favorites.length > 0) {
         // Loop through each favorite artist and display the image with a remove button
         favorites.forEach((favorite, index) => {
-          const favoriteElement = createFavoriteElement(favorite, index, overlay);
-          overlay.appendChild(favoriteElement);
+          const favoriteElement = createFavoriteElement(favorite, index, overlay1);
+          overlay1.appendChild(favoriteElement);
         });
       } else {
         // No favorites, display a message
         const noFavoritesMessage = document.createElement("p");
         noFavoritesMessage.textContent = "You don't have any favorites yet.";
-        overlay.appendChild(noFavoritesMessage);
+        overlay1.appendChild(noFavoritesMessage);
       }
     });
   
-    // Rest of the code...
   }
+  
   
 
   
