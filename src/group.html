@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/icon" href="../resources/ico/icon.ico">
 
         <link rel="stylesheet" href="../src/css/index.css">
         <link rel="stylesheet" href="../src/css/loader-style.css">
@@ -53,15 +54,9 @@
                 <div class="label-grid-column">
                     <table id="label-grid" cellspacing="12px" cellpadding="0">
                         <tr>
-                            <th>
-                                <a href="choose-call.html?band=bts"><img src="../resources/img/bts.jpg", alt="BTS"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=txt"><img src="../resources/img/txt.jpg", alt="TXT"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=svt"><img src="../resources/img/svt.jpeg", alt="SEVENTEEN"></a>
-                            </th>
+                            <th id="hybe-bts"></th>
+                            <th id="hybe-txt"></th>
+                            <th id="hybe-svt"></th>
                         </tr>
                         <tr>
                             <td>
@@ -78,22 +73,16 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="group-jyp" class="group-select">            
             <div class="label-grid-row">
                 <img src="../resources/img/jyp_png.png" class="label-logo">
                 <div class="label-grid-column">
                     <table id="label-grid" cellspacing="12px" cellpadding="0">
                         <tr>
-                            <th>
-                                <a href="choose-call.html?band=twice"><img src="../resources/img/twice.jfif", alt="TWICE"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=skz"><img src="../resources/img/skz.jpg", alt="STRAY KIDS"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=itzy"><img src="../resources/img/itzy.jpg", alt="ITZY"></a>
-                            </th>
+                            <th id="jyp-twice"></th>
+                            <th id="jyp-skz"></th>
+                            <th id="jyp-itzy"></th>
                         </tr>
                         <tr>
                             <td>
@@ -110,22 +99,17 @@
                 </div>
             </div>
         </div>
-
+        
+        <!-- Repeat the same structure for the other groups: group-sm and group-yg -->
         <div id="group-sm" class="group-select">            
             <div class="label-grid-row">
                 <img src="../resources/img/sm_png.png" class="label-logo">
                 <div class="label-grid-column">
                     <table id="label-grid" cellspacing="12px" cellpadding="0">
                         <tr>
-                            <th>
-                                <a href="choose-call.html?band=exo"><img src="../resources/img/exo.jpeg", alt="EXO"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=rv"><img src="../resources/img/rv.jpg", alt="RED VELVET"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=nct"><img src="../resources/img/nct2021.jpg", alt="NCT"></a>
-                            </th>
+                            <th id="sm-exo"></th>
+                            <th id="sm-rv"></th>
+                            <th id="sm-nct"></th>
                         </tr>
                         <tr>
                             <td>
@@ -142,22 +126,16 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="group-yg" class="group-select">            
             <div class="label-grid-row">
                 <img src="../resources/img/yg_png.png" class="label-logo">
                 <div class="label-grid-column">
                     <table id="label-grid" cellspacing="12px" cellpadding="0">
                         <tr>
-                            <th>
-                                <a href="choose-call.html?band=bp"><img src="../resources/img/bp.jpg", alt="BLACKPINK"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=treasure"><img src="../resources/img/treasure.jpg", alt="TREASURE"></a>
-                            </th>
-                            <th>
-                                <a href="choose-call.html?band=bigbang"><img src="../resources/img/bigbang.jpg", alt="BIGBANG"></a>
-                            </th>
+                            <th id="yg-bp"></th>
+                            <th id="yg-treasure"></th>
+                            <th id="yg-bigbang"></th>
                         </tr>
                         <tr>
                             <td>
@@ -175,24 +153,12 @@
             </div>
         </div>
 
-        <div class = "loader-wrapper">
-            <span class = "loader"><span class="loader-inner"></span></span>
+        <div class="loader-wrapper">
+            <span class="loader"><span class="loader-inner"></span></span>
         </div>
         <script type="text/javascript" src="../src/scripts/loader.js"></script> 
     
-    <script>
-        // get the group parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const group = urlParams.get('group');
-    
-        // show the corresponding group container
-        if (group) {
-            const selectedGroup = document.getElementById(`group-${group}`);
-            if (selectedGroup) {
-                selectedGroup.style.display = "flex";
-            }
-        }
-    </script>
+    <script src="./scripts/group.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
