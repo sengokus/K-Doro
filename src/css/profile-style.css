@@ -376,6 +376,10 @@ hr {
     cursor: pointer;
   }
 
+  .edit-fav-button {
+    text-align: center;
+  }
+
   #edit-favorites-button {
     padding: 0.5em 0.7em;
     font-size: 0.9em;
@@ -386,9 +390,13 @@ hr {
     border-radius: 0.3em;
     cursor: pointer;
     transition: 0.3s all ease;
-    position: absolute;
+    position: flex;
     left: 31.4%;
     top: 86%;
+  }
+
+  #edit-favorites-button:hover {
+    background-color: rgb(87, 113, 160);
   }
 
   .input {
@@ -441,7 +449,7 @@ label[for="edit-profile-picture"]:hover {
   z-index: -1;
 }
 
-#edit-submit button {
+#edit-submit button, #edit-cancel button {
   font-family: 'Public', sans-serif;
   font-weight: bold;
   color:rgb(236, 239, 244);
@@ -456,4 +464,19 @@ label[for="edit-profile-picture"]:hover {
 
 #edit-submit button:hover {
   background-color:rgb(87, 113, 160);
+}
+
+
+/* Styles specific to overlay1 */
+.overlay1 {
+  /* Add specific styles for overlay1 */
+  /* For example: */
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* Styles specific to overlay2 */
+.overlay2 {
+  /* Add specific styles for overlay2 */
+  /* For example: */
+  background-color: rgba(0, 0, 255, 0.5);
 }

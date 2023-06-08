@@ -18,7 +18,7 @@ registerForm.addEventListener("submit", (event) => {
   const password2 = document.getElementById("user_password2").value;
 
   // TODO: Use the email, username, and password to register the user
-  console.log(`Registering user: ${email}, ${username}, ${password1}`);
+  console.log(`Registering user.`);
   //registerUser(email, username, password1, password2);
   try {
     if (username === "" || username === " " || password1 === " " || password1 === "") {
@@ -59,36 +59,6 @@ const logout = document.querySelector("logout-button");
 logout.addEventListener('click', e =>{
   e.preventDefault();
   auth.signOut.then(() => { //sign out the user
-    console.log("user signed out");
+    console.log("user signed out successfully.");
   })
 })
-
-  // export async function registerUser(email, username, password1, password2){
-
-      // try {
-      //     if (username === "" || username === " " || password1 === " " || password1 === "") {
-      //         throw new Error('Username or Password is empty');
-      //         }
-              
-      //         if (password1 != password2) {
-      //           throw new Error('Please make sure passwords match.');
-      //         }
-      //         if (password1.length < 8) {
-      //           throw new Error('Password is weak');
-      //         }
-  //             try {
-  //                 const docRef = await addDoc(collection(db, "users"), {
-  //                 email: email,
-  //                 username: username,
-  //                 password: password2,
-  //                 });
-  //                 console.log("Document written with ID: ", docRef.id);
-  //                 alert("Registered successfully");
-  //                 document.getElementById("register").reset();
-                  
-  //             } catch (e) {
-  //                 console.error("Error adding document: ", e);
-  //             }
-  //     } catch (e) {
-  //       alert(e);
-  //     }

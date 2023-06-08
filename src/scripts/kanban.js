@@ -66,7 +66,9 @@ const handleTaskSubmission = (event, column) => {
   if (content !== "") {
     // Add the task to Firestore
     addTaskToFirestore(uid, column, content);
+    location
 
+    location.reload();
     // Reset the input field
     input.value = "";
   }
@@ -162,8 +164,8 @@ const openEditModal = (taskId, content) => {
     modal.classList.add("show");
   
     // Add event listener to the modal form for submitting the edited task
-    const form = modal.querySelector("form");
-    form.addEventListener("submit", handleEditTaskSubmission);
+    const editTask = modal.querySelector("form");
+    editTask.addEventListener("submit", handleEditTaskSubmission);
   
     // Add event listener to the delete task button
     const deleteButton = modal.querySelector("#deleteTaskButton");
@@ -172,6 +174,8 @@ const openEditModal = (taskId, content) => {
       modal.classList.remove("show");
     });
   };
+
+
 const deleteTask = async (uid, taskId, originalContent) => {
   try {
     const docRef = doc(db, "tasks", uid);
@@ -206,6 +210,7 @@ const deleteTask = async (uid, taskId, originalContent) => {
     console.error("Error deleting task from Firestore:", error);
   }
 };
+
 
   
   // Function to handle the edit task submission
